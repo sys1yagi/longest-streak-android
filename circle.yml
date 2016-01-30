@@ -28,7 +28,7 @@ test:
     #- ./gradlew testStagingDebugUnitTest -PdisablePreDex
   post:
     # copy the build outputs to artifacts
-    - cp -r sample/build/outputs $CIRCLE_ARTIFACTS
-    - cp -r sample/build/reports $CIRCLE_ARTIFACTS
+    - cp -r app/build/outputs $CIRCLE_ARTIFACTS
+    - cp -r app/build/reports $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory - disabled for now
     #- cp -r app/build/reports/tests/* $CIRCLE_TEST_REPORTS
