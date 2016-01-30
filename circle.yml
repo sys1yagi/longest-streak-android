@@ -19,7 +19,7 @@ dependencies:
 test:
   override:
     # build the project
-    - ./gradlew sample:assembleDebug
+    - ./gradlew app:assembleDebug
     # run test
     - ./gradlew test
     # run lint
