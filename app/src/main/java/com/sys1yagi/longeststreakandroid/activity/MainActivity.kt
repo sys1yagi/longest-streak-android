@@ -2,30 +2,44 @@ package com.sys1yagi.longeststreakandroid.activity
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
-import com.sys1yagi.longeststreakandroid.LongestStreakApplication
+import android.view.View
+import com.cookpad.android.rxt4a.schedulers.AndroidSchedulers
 import com.sys1yagi.longeststreakandroid.R
-import com.sys1yagi.longeststreakandroid.alarm.PollingAlarmProcessorScheduler
+import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.databinding.ActivityMainBinding
+import com.sys1yagi.longeststreakandroid.model.Event
+import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity
+import rx.schedulers.Schedulers
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : RxAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val publicContributionJudgement = PublicContributionJudgement()
 
         setSupportActionBar(binding.toolbar)
 
-        binding.fab.setOnClickListener { view ->
-            PollingAlarmProcessorScheduler.scheduleRtcWakeup(this, 1000)
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
-        }
-
-        if (LongestStreakApplication.database.selectFromUserName().count() > 0) {
-            binding.contentMain.text.text = "It has already set up Github account.";
-        } else {
-            binding.contentMain.text.text = "Not yet set up Github account.";
-        }
+        binding.contentMain.statusBoard.visibility = View.GONE;
+        GithubService.client.userEvents("sys1yagi")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle<List<Event>>())
+                .subscribe(
+                        { events ->
+                            binding.contentMain.statusBoard.visibility = View.VISIBLE
+                            binding.contentMain.loading.visibility = View.GONE
+                            if (publicContributionJudgement.alreadyContributed("sys1yagi",
+                                    System.currentTimeMillis(),
+                                    events)) {
+                                binding.contentMain.todayStatus.setText(R.string.ok)
+                            } else {
+                                binding.contentMain.todayStatus.setText(R.string.not_yet)
+                            }
+                        },
+                        { error ->
+                            error.printStackTrace()
+                        })
     }
 }

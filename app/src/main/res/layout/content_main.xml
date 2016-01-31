@@ -2,19 +2,50 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
-    <android.support.v4.widget.NestedScrollView
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:showIn="@layout/activity_main"
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:showIn="@layout/activity_main"
             tools:context=".activity.MainActivity">
-
-        <TextView
-                android:id="@+id/text"
-                android:layout_width="wrap_content"
+        <LinearLayout
+                android:id="@+id/loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+            <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/text_secondary"
+                      android:text="now loading..."
+                      android:textSize="15sp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/status_board"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/text_margin"
-                android:text="dummy"/>
-
-    </android.support.v4.widget.NestedScrollView>
+                android:paddingBottom="@dimen/text_margin"
+                android:orientation="vertical">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/text"
+                    android:text="Today"/>
+            <TextView
+                    android:id="@+id/today_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="82sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/red"
+                    tools:text="Not Yet"/>
+        </LinearLayout>
+    </FrameLayout>
 </layout>

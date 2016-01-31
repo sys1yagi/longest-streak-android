@@ -1,0 +1,38 @@
+{
+  "id": "3587836685",
+  "type": "PushEvent",
+  "actor": {
+    "id": 749051,
+    "login": "sys1yagi",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/sys1yagi",
+    "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+  },
+  "repo": {
+    "id": 50709622,
+    "name": "sys1yagi/longest-streak-android",
+    "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+  },
+  "payload": {
+    "push_id": 956831584,
+    "size": 1,
+    "distinct_size": 1,
+    "ref": "refs/heads/master",
+    "head": "b8f8a0bab3f03cab6221b8c7bdd4fa80d5bb584f",
+    "before": "8ea4cbece8428164e320a225a2ec3a9f64e888a2",
+    "commits": [
+      {
+        "sha": "b8f8a0bab3f03cab6221b8c7bdd4fa80d5bb584f",
+        "author": {
+          "email": "toshihiro-yagi@cookpad.com",
+          "name": "Toshihiro Yagi"
+        },
+        "message": "Fix circle.yml",
+        "distinct": true,
+        "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/b8f8a0bab3f03cab6221b8c7bdd4fa80d5bb584f"
+      }
+    ]
+  },
+  "public": true,
+  "created_at": "2016-01-30T16:18:36Z"
+}

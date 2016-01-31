@@ -1,7 +1,7 @@
 package com.sys1yagi.longeststreakandroid
 
 import android.app.Application
-import com.sys1yagi.longeststreakandroid.model.OrmaDatabase
+import com.sys1yagi.longeststreakandroid.db.OrmaDatabase
 
 class LongestStreakApplication : Application() {
 
