@@ -19,11 +19,11 @@ dependencies:
 test:
   override:
     # build the project
-    - ./gradlew app:assembleDebug
+    - ./gradlew --stacktrace app:assembleDebug -PpreDexEnable=false -Pcom.android.build.threadPoolSize=1 -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xms512m -Xmx512m" -Dorg.gradle.daemon=false
     # run test
-    - ./gradlew test
+    - ./gradlew -PdisablePreDex test
     # run lint
-    - ./gradlew lint
+    - ./gradlew -PdisablePreDex lint
     # run robolectric tests - disabled for now
     #- ./gradlew testStagingDebugUnitTest -PdisablePreDex
   post:
