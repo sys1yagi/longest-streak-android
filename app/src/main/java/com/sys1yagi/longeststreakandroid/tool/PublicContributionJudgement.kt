@@ -2,6 +2,9 @@ package com.sys1yagi.longeststreakandroid.tool
 
 import com.sys1yagi.longeststreakandroid.model.Commit
 import com.sys1yagi.longeststreakandroid.model.Event
+import org.threeten.bp.Instant
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.ZoneId
 
 class PublicContributionJudgement {
 
@@ -9,7 +12,6 @@ class PublicContributionJudgement {
         if (events.isEmpty()) {
             return 0
         }
-
         return events
                 .filter {
                     event ->
@@ -41,7 +43,8 @@ class PublicContributionJudgement {
     }
 
     fun day(time: Long): Long {
-        return time / (1000L * 60L * 60L * 24L)
+        val dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.systemDefault())
+        return dateTime.year * 10000L + dateTime.monthValue * 100L + dateTime.dayOfMonth
     }
 
 }
