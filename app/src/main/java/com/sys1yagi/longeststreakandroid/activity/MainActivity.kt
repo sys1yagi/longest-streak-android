@@ -33,8 +33,10 @@ class MainActivity : RxAppCompatActivity() {
                             if (publicContributionJudgement.alreadyContributed("sys1yagi",
                                     System.currentTimeMillis(),
                                     events)) {
+                                binding.contentMain.todayStatus.setTextColor(getColor(R.color.green))
                                 binding.contentMain.todayStatus.setText(R.string.ok)
                             } else {
+                                binding.contentMain.todayStatus.setTextColor(getColor(R.color.red))
                                 binding.contentMain.todayStatus.setText(R.string.not_yet)
                             }
                         },
