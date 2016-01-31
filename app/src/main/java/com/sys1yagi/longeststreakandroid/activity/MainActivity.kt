@@ -2,6 +2,7 @@ package com.sys1yagi.longeststreakandroid.activity
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.view.View
 import com.cookpad.android.rxt4a.schedulers.AndroidSchedulers
 import com.sys1yagi.longeststreakandroid.R
@@ -34,11 +35,11 @@ class MainActivity : RxAppCompatActivity() {
                                     System.currentTimeMillis(),
                                     events);
                             if (count > 0) {
-                                binding.contentMain.todayStatus.setTextColor(getColor(R.color.green))
+                                binding.contentMain.todayStatus.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.green))
                                 binding.contentMain.todayStatus.setText(R.string.ok)
                                 binding.contentMain.contributionCount.text = getString(R.string.contribution_count, count)
                             } else {
-                                binding.contentMain.todayStatus.setTextColor(getColor(R.color.red))
+                                binding.contentMain.todayStatus.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.red))
                                 binding.contentMain.todayStatus.setText(R.string.not_yet)
                                 binding.contentMain.contributionCount.visibility = View.GONE
                             }

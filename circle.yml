@@ -21,9 +21,9 @@ test:
     # build the project
     - ./gradlew --stacktrace app:assembleDebug -PpreDexEnable=false -Pcom.android.build.threadPoolSize=1 -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xms512m -Xmx512m" -Dorg.gradle.daemon=false
     # run test
-    - ./gradlew -PdisablePreDex test
+    - ./gradlew test
     # run lint
-    - ./gradlew -PdisablePreDex lint
+    - ./gradlew lint
     # run robolectric tests - disabled for now
     #- ./gradlew testStagingDebugUnitTest -PdisablePreDex
   post:
