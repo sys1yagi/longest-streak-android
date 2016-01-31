@@ -11,6 +11,6 @@ import rx.Observable;
 
 public interface Github {
 
-    @GET("users/{user}/events")
+    @GET("users/{user}/events/public")
     Observable<List<Event>> userEvents(@Path("user") String userName);
 }
