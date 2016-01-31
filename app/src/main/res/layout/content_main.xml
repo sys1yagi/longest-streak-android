@@ -20,7 +20,7 @@
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:textColor="@color/text_secondary"
-                      android:text="now loading..."
+                      android:text="@string/now_loading"
                       android:textSize="15sp"/>
         </LinearLayout>
         <LinearLayout
@@ -35,18 +35,26 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/text_margin"
                     android:layout_gravity="center"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/text_size_today"
                     android:textColor="@color/text"
-                    android:text="Today"/>
+                    android:text="@string/today"/>
             <TextView
                     android:id="@+id/today_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="82sp"
+                    android:textSize="@dimen/text_size_status"
                     android:textStyle="bold"
                     android:textColor="@color/red"
                     tools:text="Not Yet"/>
+            <TextView
+                    android:id="@+id/contribution_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size_today"
+                    android:textColor="@color/text"
+            />
         </LinearLayout>
     </FrameLayout>
 </layout>

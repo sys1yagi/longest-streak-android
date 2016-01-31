@@ -15,7 +15,7 @@ class PublicContributionJudgementTest {
 
     @Test
     fun empty() {
-        assertThat(publicContributionJudgement.alreadyContributed("sys1yagi", 0, ArrayList())).isFalse()
+        assertThat(publicContributionJudgement.todayContributionCount("sys1yagi", 0, ArrayList())).isEqualTo(0)
     }
 
     @Test
@@ -24,8 +24,8 @@ class PublicContributionJudgementTest {
         val accessor = DateTimeFormatter.ISO_DATE_TIME.parse("2016-01-30T05:22:25Z");
         val now = LocalDateTime.from(accessor).toInstant(ZoneOffset.from(accessor)).toEpochMilli()
 
-        assertThat(publicContributionJudgement.alreadyContributed("sys1yagi", now, listOf(event)))
-                .isTrue()
+        assertThat(publicContributionJudgement.todayContributionCount("sys1yagi", now, listOf(event)))
+                .isEqualTo(1)
     }
 
     @Test
@@ -34,8 +34,8 @@ class PublicContributionJudgementTest {
         val accessor = DateTimeFormatter.ISO_DATE_TIME.parse("2016-01-31T05:22:25Z");
         val now = LocalDateTime.from(accessor).toInstant(ZoneOffset.from(accessor)).toEpochMilli()
 
-        assertThat(publicContributionJudgement.alreadyContributed("sys1yagi", now, listOf(event)))
-                .isFalse()
+        assertThat(publicContributionJudgement.todayContributionCount("sys1yagi", now, listOf(event)))
+                .isEqualTo(0)
     }
 
     @Test

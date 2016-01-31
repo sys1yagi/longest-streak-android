@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="not_yet">Not Yet</string>
     <string name="ok">OK</string>
+    <string name="now_loading">now loading…</string>
+    <string name="today">Today</string>
+    <string name="contribution_count">%1$d contribution!</string>
 </resources>

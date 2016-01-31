@@ -30,14 +30,17 @@ class MainActivity : RxAppCompatActivity() {
                         { events ->
                             binding.contentMain.statusBoard.visibility = View.VISIBLE
                             binding.contentMain.loading.visibility = View.GONE
-                            if (publicContributionJudgement.alreadyContributed("sys1yagi",
+                            val count = publicContributionJudgement.todayContributionCount("sys1yagi",
                                     System.currentTimeMillis(),
-                                    events)) {
+                                    events);
+                            if (count > 0) {
                                 binding.contentMain.todayStatus.setTextColor(getColor(R.color.green))
                                 binding.contentMain.todayStatus.setText(R.string.ok)
+                                binding.contentMain.contributionCount.text = getString(R.string.contribution_count, count)
                             } else {
                                 binding.contentMain.todayStatus.setTextColor(getColor(R.color.red))
                                 binding.contentMain.todayStatus.setText(R.string.not_yet)
+                                binding.contentMain.contributionCount.visibility = View.GONE
                             }
                         },
                         { error ->

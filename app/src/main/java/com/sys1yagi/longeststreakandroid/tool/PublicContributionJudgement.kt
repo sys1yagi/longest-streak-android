@@ -5,32 +5,32 @@ import com.sys1yagi.longeststreakandroid.model.Event
 
 class PublicContributionJudgement {
 
-    fun alreadyContributed(name: String, now: Long, events: List<Event>): Boolean {
+    fun todayContributionCount(name: String, now: Long, events: List<Event>): Int {
         if (events.isEmpty()) {
-            return false
+            return 0
         }
 
-        return !events
+        return events
                 .filter {
                     event ->
                     // check type
                     if (!event.type.equals(Event.Type.PUSH)) {
-                        return false
+                        return@filter false
                     }
 
                     // check public contribution action
                     if (!isValidCommits(name, event.payload.commits)) {
-                        return false
+                        return@filter false
                     }
 
                     // check date
                     if (day(now) != day(event.createdAt.time)) {
-                        return false
+                        return@filter false
                     }
 
-                    return true
+                    return@filter true
                 }
-                .isEmpty()
+                .size
     }
 
     fun isValidCommits(name: String, commits: List<Commit>): Boolean {
