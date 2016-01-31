@@ -1,15 +1,22 @@
 package com.sys1yagi.longeststreakandroid.tool
 
 import com.sys1yagi.life_basic_android.tool.GsonProvider
+import com.sys1yagi.longeststreakandroid.BuildConfig
+import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.model.Event
 import com.sys1yagi.longeststreakandroid.testtool.AssetsUtilForTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricGradleTestRunner
+import org.robolectric.annotation.Config
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZoneOffset
 import org.threeten.bp.format.DateTimeFormatter
 import java.util.*
 
+@RunWith(RobolectricGradleTestRunner::class)
+@Config(application = LongestStreakApplication::class, constants = BuildConfig::class, sdk = intArrayOf(21))
 class PublicContributionJudgementTest {
     val publicContributionJudgement = PublicContributionJudgement()
 
