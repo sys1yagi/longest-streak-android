@@ -38,8 +38,8 @@ dependencies {
     kapt 'com.github.gfx.android.orma:orma-processor:1.1.2'
     compile 'com.github.gfx.android.orma:orma:1.1.2'
 
-    kapt 'com.github.sys1yagi.alarm-manager-simplify:processor:0.3.0'
-    compile 'com.github.sys1yagi.alarm-manager-simplify:library:0.3.0'
+    kapt 'com.github.sys1yagi.alarm-manager-simplify:processor:0.3.1'
+    compile 'com.github.sys1yagi.alarm-manager-simplify:library:0.3.1'
 
     compile 'com.github.sys1yagi.fragment-creator:library:0.6.1'
     kapt 'com.github.sys1yagi.fragment-creator:processor:0.6.1'
