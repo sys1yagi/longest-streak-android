@@ -22,8 +22,9 @@
                         app:popupTheme="@style/AppTheme.PopupOverlay"/>
         </android.support.design.widget.AppBarLayout>
 
-        <include
-                android:id="@+id/content_main"
-                layout="@layout/content_main"/>
+        <FrameLayout
+                android:id="@+id/content_frame"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
     </android.support.design.widget.CoordinatorLayout>
 </layout>

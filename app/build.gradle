@@ -41,6 +41,9 @@ dependencies {
     kapt 'com.github.sys1yagi.alarm-manager-simplify:processor:0.3.0'
     compile 'com.github.sys1yagi.alarm-manager-simplify:library:0.3.0'
 
+    compile 'com.github.sys1yagi.fragment-creator:library:0.6.1'
+    kapt 'com.github.sys1yagi.fragment-creator:processor:0.6.1'
+
     compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta3'
