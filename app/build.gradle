@@ -56,6 +56,7 @@ dependencies {
     compile 'com.trello:rxlifecycle:0.4.0'
     compile 'com.trello:rxlifecycle-components:0.4.0'
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
+    compile "com.github.akarnokd:ixjava:0.90.0"
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.powermock:powermock-module-junit4:1.6.2'

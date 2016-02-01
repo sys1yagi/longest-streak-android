@@ -2,9 +2,11 @@ package com.sys1yagi.longeststreakandroid.activity
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
 import com.sys1yagi.longeststreakandroid.databinding.ActivityMainBinding
 import com.sys1yagi.longeststreakandroid.db.Account
+import com.sys1yagi.longeststreakandroid.fragment.AccountSetupFragmentCreator
 import com.sys1yagi.longeststreakandroid.fragment.MainFragmentCreator
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity
 
@@ -17,12 +19,19 @@ class MainActivity : RxAppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         if (savedInstanceState == null) {
 
-            //for develop
-            val account = Account()
-            account.name = "sys1yagi"
+            LongestStreakApplication.database.selectFromAccount().firstOrNull()?.let {
+                //for develop
+                val account = Account()
+                account.name = "sys1yagi"
+
+                supportFragmentManager.beginTransaction()
+                        .add(R.id.content_frame, MainFragmentCreator.newBuilder(account).build())
+                        .commit()
+                return
+            }
 
             supportFragmentManager.beginTransaction()
-                    .add(R.id.content_frame, MainFragmentCreator.newBuilder(account).build())
+                    .add(R.id.content_frame, AccountSetupFragmentCreator.newBuilder().build())
                     .commit()
         }
     }

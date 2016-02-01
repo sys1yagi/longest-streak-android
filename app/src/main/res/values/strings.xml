@@ -6,4 +6,9 @@
     <string name="now_loading">now loading…</string>
     <string name="today">Today</string>
     <string name="contribution_count">%1$d contribution!</string>
+    <string name="hint_name_for_call_users_api">name : for call users api</string>
+    <string name="hint_email_for_commits_verification">email : for commits verification</string>
+    <string name="hint_zoneid_time_zone">zoneid : time zone (ex. Asia/Tokyo)</string>
+    <string name="register">REGISTER</string>
+    <string name="github_account_setup">Github Account Setup</string>
 </resources>
