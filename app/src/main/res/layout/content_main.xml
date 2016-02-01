@@ -9,7 +9,21 @@
             tools:showIn="@layout/activity_main"
             tools:context=".activity.MainActivity">
         <LinearLayout
-                android:id="@+id/loading"
+                android:id="@+id/error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+            <TextView
+                    android:id="@+id/error_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text"
+                    android:textSize="15sp"
+                    android:padding="@dimen/text_margin"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/progress"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
