@@ -1,4 +1,4 @@
-package com.sys1yagi.life_basic_android.tool
+package com.sys1yagi.longeststreakandroid.tool
 
 import com.google.gson.*
 import com.google.gson.reflect.TypeToken

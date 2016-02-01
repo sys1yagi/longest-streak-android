@@ -1,6 +1,5 @@
 package com.sys1yagi.longeststreakandroid.tool
 
-import com.sys1yagi.life_basic_android.tool.GsonProvider
 import com.sys1yagi.longeststreakandroid.BuildConfig
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.model.Event

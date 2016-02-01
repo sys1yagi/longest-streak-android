@@ -1,6 +1,6 @@
 package com.sys1yagi.longeststreakandroid.api
 
-import com.sys1yagi.life_basic_android.tool.GsonProvider
+import com.sys1yagi.longeststreakandroid.tool.GsonProvider
 import retrofit2.GsonConverterFactory
 import retrofit2.Retrofit
 import retrofit2.RxJavaCallAdapterFactory
