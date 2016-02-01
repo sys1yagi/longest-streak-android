@@ -46,6 +46,16 @@ class PublicContributionJudgementTest {
     }
 
     @Test
+    fun multiCommitsPushEvent() {
+        val event = GsonProvider.instance.fromJson(AssetsUtilForTest.readString("MultiCommitContributionEvent.json"), Event::class.java)
+        val accessor = DateTimeFormatter.ISO_DATE_TIME.parse("2016-01-30T05:22:25Z");
+        val now = LocalDateTime.from(accessor).toInstant(ZoneOffset.from(accessor)).toEpochMilli()
+
+        assertThat(publicContributionJudgement.todayContributionCount("sys1yagi", now, listOf(event)))
+                .isEqualTo(2)
+    }
+
+    @Test
     fun notContribution() {
 
     }

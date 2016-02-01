@@ -13,32 +13,28 @@ class PublicContributionJudgement {
             return 0
         }
         return events
-                .filter {
+                .map {
                     event ->
                     // check type
                     if (!event.type.equals(Event.Type.PUSH)) {
-                        return@filter false
+                        return@map 0
                     }
 
-                    // check public contribution action
-                    if (!isValidCommits(name, event.payload.commits)) {
-                        return@filter false
-                    }
                     // check date
                     if (day(now) != day(event.createdAt.time)) {
-                        return@filter false
+                        return@map 0
                     }
-
-                    return@filter true
+                    
+                    // check public contribution action
+                    return@map countValidCommits(name, event.payload.commits)
                 }
-                .size
+                .reduce { i, j -> i + j }
     }
 
-    fun isValidCommits(name: String, commits: List<Commit>): Boolean {
-        return !commits.filter {
-            commit ->
-            return name.equals(commit.author.name)
-        }.isEmpty()
+    fun countValidCommits(name: String, commits: List<Commit>): Int {
+        return commits.map { commit ->
+            if (name.equals(commit.author.name)) 1 else 0
+        }.reduce { i, j -> i + j }
     }
 
     val JST = ZoneId.of("Asia/Tokyo")
