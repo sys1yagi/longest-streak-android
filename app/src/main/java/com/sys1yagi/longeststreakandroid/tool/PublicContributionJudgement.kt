@@ -24,7 +24,6 @@ class PublicContributionJudgement {
                     if (!isValidCommits(name, event.payload.commits)) {
                         return@filter false
                     }
-
                     // check date
                     if (day(now) != day(event.createdAt.time)) {
                         return@filter false
@@ -42,8 +41,10 @@ class PublicContributionJudgement {
         }.isEmpty()
     }
 
+    val JST = ZoneId.of("Asia/Tokyo")
+
     fun day(time: Long): Long {
-        val dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.systemDefault())
+        val dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), JST)
         return dateTime.year * 10000L + dateTime.monthValue * 100L + dateTime.dayOfMonth
     }
 
