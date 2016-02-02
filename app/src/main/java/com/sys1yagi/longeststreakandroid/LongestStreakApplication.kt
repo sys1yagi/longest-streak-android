@@ -12,6 +12,11 @@ class LongestStreakApplication : Application() {
         AndroidThreeTen.init(this);
     }
 
+    override fun onTerminate() {
+        super.onTerminate()
+        database.connection.close()
+    }
+
     companion object {
         public lateinit var database: OrmaDatabase
     }
