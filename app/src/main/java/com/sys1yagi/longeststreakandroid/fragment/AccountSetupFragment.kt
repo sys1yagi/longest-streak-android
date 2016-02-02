@@ -12,7 +12,6 @@ import com.sys1yagi.longeststreakandroid.databinding.FragmentAccountSetupBinding
 import com.sys1yagi.longeststreakandroid.db.Account
 import com.sys1yagi.longeststreakandroid.tool.KeyboardManager
 import com.trello.rxlifecycle.components.support.RxFragment
-import ix.Ix
 import org.threeten.bp.DateTimeException
 import org.threeten.bp.ZoneId
 
@@ -36,23 +35,14 @@ class AccountSetupFragment : RxFragment() {
 
         binding.registerButton.setOnClickListener {
             v ->
-
-            Ix.from(
-                    verifyName(binding),
-                    verifyEmail(binding),
-                    verifyZoneId(binding)
-            )
-                    .filter { result -> result }
-                    .count()
-                    .filter { count -> count == 3 }
-                    .forEach {
-                        val account = saveAccount(
+            if (verifyName(binding) && verifyEmail(binding) && verifyZoneId(binding)) {
+                val account = saveAccount(
                                 binding.editName.text.toString(),
                                 binding.editEmail.text.toString(),
                                 binding.editZoneId.text.toString()
                         )
-                        openMainFragment(account)
-                    }
+                openMainFragment(account)
+            }
         }
         KeyboardManager.show(context)
     }
@@ -64,13 +54,13 @@ class AccountSetupFragment : RxFragment() {
     }
 
     fun saveAccount(name: String, email: String, zoneId: String): Account {
+        val database = LongestStreakApplication.database
         val account = Account()
         account.name = name
         account.email = email
         account.zoneId = zoneId
-
-        LongestStreakApplication.database.insertIntoAccount(account)
-        return account
+        database.insertIntoAccount(account)
+        return account;
     }
 
     fun verifyName(binding: FragmentAccountSetupBinding): Boolean {
