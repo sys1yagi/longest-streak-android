@@ -35,8 +35,8 @@ dependencies {
     kapt 'com.android.databinding:compiler:1.0-rc5'
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    kapt 'com.github.gfx.android.orma:orma-processor:1.1.2'
-    compile 'com.github.gfx.android.orma:orma:1.1.2'
+    kapt 'com.github.gfx.android.orma:orma-processor:1.0.1'
+    compile 'com.github.gfx.android.orma:orma:1.0.1'
 
     kapt 'com.github.sys1yagi.alarm-manager-simplify:processor:0.3.1'
     compile 'com.github.sys1yagi.alarm-manager-simplify:library:0.3.1'
