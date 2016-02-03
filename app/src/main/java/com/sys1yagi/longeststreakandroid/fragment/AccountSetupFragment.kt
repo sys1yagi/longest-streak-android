@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
-import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
 import com.sys1yagi.longeststreakandroid.databinding.FragmentAccountSetupBinding
-import com.sys1yagi.longeststreakandroid.db.Account
+import com.sys1yagi.longeststreakandroid.preference.Account
 import com.sys1yagi.longeststreakandroid.tool.KeyboardManager
 import com.trello.rxlifecycle.components.support.RxFragment
 import org.threeten.bp.DateTimeException
@@ -36,31 +35,27 @@ class AccountSetupFragment : RxFragment() {
         binding.registerButton.setOnClickListener {
             v ->
             if (verifyName(binding) && verifyEmail(binding) && verifyZoneId(binding)) {
-                val account = saveAccount(
-                                binding.editName.text.toString(),
-                                binding.editEmail.text.toString(),
-                                binding.editZoneId.text.toString()
-                        )
-                openMainFragment(account)
+                saveAccount(
+                        binding.editName.text.toString(),
+                        binding.editEmail.text.toString(),
+                        binding.editZoneId.text.toString()
+                )
+                openMainFragment()
             }
         }
         KeyboardManager.show(context)
     }
 
-    fun openMainFragment(account: Account) {
+    fun openMainFragment() {
         fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, MainFragmentCreator.newBuilder(account).build())
+                .replace(R.id.content_frame, MainFragmentCreator.newBuilder().build())
                 .commit()
     }
 
-    fun saveAccount(name: String, email: String, zoneId: String): Account {
-        val database = LongestStreakApplication.database
-        val account = Account()
-        account.name = name
-        account.email = email
-        account.zoneId = zoneId
-        database.insertIntoAccount(account)
-        return account;
+    fun saveAccount(name: String, email: String, zoneId: String) {
+        Account.name = name
+        Account.email = email
+        Account.zoneId = zoneId
     }
 
     fun verifyName(binding: FragmentAccountSetupBinding): Boolean {

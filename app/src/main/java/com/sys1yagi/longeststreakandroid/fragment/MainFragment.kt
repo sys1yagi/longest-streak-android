@@ -6,22 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.cookpad.android.rxt4a.schedulers.AndroidSchedulers
-import com.sys1yagi.fragmentcreator.annotation.Args
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
 import com.sys1yagi.longeststreakandroid.R
 import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.databinding.FragmentMainBinding
-import com.sys1yagi.longeststreakandroid.db.Account
 import com.sys1yagi.longeststreakandroid.model.Event
+import com.sys1yagi.longeststreakandroid.preference.Account
 import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
 import com.trello.rxlifecycle.components.support.RxFragment
 import rx.schedulers.Schedulers
 
 @FragmentCreator
 class MainFragment : RxFragment() {
-
-    @Args
-    lateinit var account: Account
 
     lateinit var binding: FragmentMainBinding
 
@@ -37,7 +33,7 @@ class MainFragment : RxFragment() {
 
     override fun onResume() {
         super.onResume()
-        checkContributionOfTheToday(account.name)
+        checkContributionOfTheToday(Account.name)
     }
 
     fun showProgress() {
