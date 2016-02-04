@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.text.TextUtils
 import com.sys1yagi.longeststreakandroid.R
+import com.sys1yagi.longeststreakandroid.alarm.PollingAlarmProcessor
 import com.sys1yagi.longeststreakandroid.databinding.ActivityMainBinding
 import com.sys1yagi.longeststreakandroid.fragment.AccountSetupFragmentCreator
 import com.sys1yagi.longeststreakandroid.fragment.MainFragmentCreator
@@ -28,6 +29,8 @@ class MainActivity : RxAppCompatActivity() {
                         .commit()
             }
         }
+
+        PollingAlarmProcessor.nextAlarmAfterAnHour(this)
     }
 
 
