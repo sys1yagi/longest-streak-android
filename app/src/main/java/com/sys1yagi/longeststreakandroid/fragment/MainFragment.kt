@@ -33,7 +33,7 @@ class MainFragment : RxFragment() {
 
     override fun onResume() {
         super.onResume()
-        checkContributionOfTheToday(Account.name)
+        checkContributionOfTheToday(Account.name, Account.zoneId)
     }
 
     fun showProgress() {
@@ -55,7 +55,7 @@ class MainFragment : RxFragment() {
         binding.errorText.text = error.message
     }
 
-    fun checkContributionOfTheToday(name: String) {
+    fun checkContributionOfTheToday(name: String, zoneId: String) {
         showProgress()
 
         GithubService.client.userEvents(name)
@@ -63,16 +63,17 @@ class MainFragment : RxFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(bindToLifecycle<List<Event>>())
                 .subscribe(
-                        { events -> setupStatus(name, events) },
+                        { events -> setupStatus(name, zoneId, events) },
                         { error -> showError(error) }
                 )
     }
 
-    fun setupStatus(name: String, events: List<Event>) {
+    fun setupStatus(name: String, zoneId: String, events: List<Event>) {
         showStatus()
 
         val publicContributionJudgement = PublicContributionJudgement()
-        val count = publicContributionJudgement.todayContributionCount(name,
+        val count = publicContributionJudgement.todayContributionCount(
+                name, zoneId,
                 System.currentTimeMillis(),
                 events);
         if (count > 0) {

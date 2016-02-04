@@ -8,7 +8,7 @@ import org.threeten.bp.ZoneId
 
 class PublicContributionJudgement {
 
-    fun todayContributionCount(name: String, now: Long, events: List<Event>): Int {
+    fun todayContributionCount(name: String, zoneId: String, now: Long, events: List<Event>): Int {
         if (events.isEmpty()) {
             return 0
         }
@@ -21,10 +21,10 @@ class PublicContributionJudgement {
                     }
 
                     // check date
-                    if (day(now) != day(event.createdAt.time)) {
+                    if (day(now, zoneId) != day(event.createdAt.time, zoneId)) {
                         return@map 0
                     }
-                    
+
                     // check public contribution action
                     return@map countValidCommits(name, event.payload.commits)
                 }
@@ -37,10 +37,8 @@ class PublicContributionJudgement {
         }.reduce { i, j -> i + j }
     }
 
-    val JST = ZoneId.of("Asia/Tokyo")
-
-    fun day(time: Long): Long {
-        val dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), JST)
+    fun day(time: Long, zoneId: String): Long {
+        val dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.of(zoneId))
         return dateTime.year * 10000L + dateTime.monthValue * 100L + dateTime.dayOfMonth
     }
 
