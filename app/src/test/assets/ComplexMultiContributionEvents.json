@@ -1,0 +1,1713 @@
+[
+  {
+    "id": "3610322539",
+    "type": "PullRequestEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 40081857,
+      "name": "chibatching/Kotpref",
+      "url": "https://api.github.com/repos/chibatching/Kotpref"
+    },
+    "payload": {
+      "action": "opened",
+      "number": 10,
+      "pull_request": {
+        "url": "https://api.github.com/repos/chibatching/Kotpref/pulls/10",
+        "id": 58387398,
+        "html_url": "https://github.com/chibatching/Kotpref/pull/10",
+        "diff_url": "https://github.com/chibatching/Kotpref/pull/10.diff",
+        "patch_url": "https://github.com/chibatching/Kotpref/pull/10.patch",
+        "issue_url": "https://api.github.com/repos/chibatching/Kotpref/issues/10",
+        "number": 10,
+        "state": "open",
+        "locked": false,
+        "title": "Bump up kotlin version",
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "body": "Hi.\r\n\r\nKotlin 1.0 Release Candidate is Out!\r\nhttp://blog.jetbrains.com/kotlin/2016/02/kotlin-1-0-release-candidate-is-out/\r\n\r\n1.0 RC is not compatible with older version. \r\nSo the library written by Kotlin is should update.\r\n\r\nThanks.",
+        "created_at": "2016-02-05T04:31:07Z",
+        "updated_at": "2016-02-05T04:31:07Z",
+        "closed_at": null,
+        "merged_at": null,
+        "merge_commit_sha": null,
+        "assignee": null,
+        "milestone": null,
+        "commits_url": "https://api.github.com/repos/chibatching/Kotpref/pulls/10/commits",
+        "review_comments_url": "https://api.github.com/repos/chibatching/Kotpref/pulls/10/comments",
+        "review_comment_url": "https://api.github.com/repos/chibatching/Kotpref/pulls/comments{/number}",
+        "comments_url": "https://api.github.com/repos/chibatching/Kotpref/issues/10/comments",
+        "statuses_url": "https://api.github.com/repos/chibatching/Kotpref/statuses/c81104d242feb1fa75b5851a1eaeb3b83082a778",
+        "head": {
+          "label": "sys1yagi:bump_up_kotlin_version",
+          "ref": "bump_up_kotlin_version",
+          "sha": "c81104d242feb1fa75b5851a1eaeb3b83082a778",
+          "user": {
+            "login": "sys1yagi",
+            "id": 749051,
+            "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sys1yagi",
+            "html_url": "https://github.com/sys1yagi",
+            "followers_url": "https://api.github.com/users/sys1yagi/followers",
+            "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+            "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+            "repos_url": "https://api.github.com/users/sys1yagi/repos",
+            "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "repo": {
+            "id": 51125189,
+            "name": "Kotpref",
+            "full_name": "sys1yagi/Kotpref",
+            "owner": {
+              "login": "sys1yagi",
+              "id": 749051,
+              "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/sys1yagi",
+              "html_url": "https://github.com/sys1yagi",
+              "followers_url": "https://api.github.com/users/sys1yagi/followers",
+              "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+              "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+              "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+              "repos_url": "https://api.github.com/users/sys1yagi/repos",
+              "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+              "type": "User",
+              "site_admin": false
+            },
+            "private": false,
+            "html_url": "https://github.com/sys1yagi/Kotpref",
+            "description": "Android SharedPreference delegation for Kotlin",
+            "fork": true,
+            "url": "https://api.github.com/repos/sys1yagi/Kotpref",
+            "forks_url": "https://api.github.com/repos/sys1yagi/Kotpref/forks",
+            "keys_url": "https://api.github.com/repos/sys1yagi/Kotpref/keys{/key_id}",
+            "collaborators_url": "https://api.github.com/repos/sys1yagi/Kotpref/collaborators{/collaborator}",
+            "teams_url": "https://api.github.com/repos/sys1yagi/Kotpref/teams",
+            "hooks_url": "https://api.github.com/repos/sys1yagi/Kotpref/hooks",
+            "issue_events_url": "https://api.github.com/repos/sys1yagi/Kotpref/issues/events{/number}",
+            "events_url": "https://api.github.com/repos/sys1yagi/Kotpref/events",
+            "assignees_url": "https://api.github.com/repos/sys1yagi/Kotpref/assignees{/user}",
+            "branches_url": "https://api.github.com/repos/sys1yagi/Kotpref/branches{/branch}",
+            "tags_url": "https://api.github.com/repos/sys1yagi/Kotpref/tags",
+            "blobs_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/blobs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/tags{/sha}",
+            "git_refs_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/refs{/sha}",
+            "trees_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/trees{/sha}",
+            "statuses_url": "https://api.github.com/repos/sys1yagi/Kotpref/statuses/{sha}",
+            "languages_url": "https://api.github.com/repos/sys1yagi/Kotpref/languages",
+            "stargazers_url": "https://api.github.com/repos/sys1yagi/Kotpref/stargazers",
+            "contributors_url": "https://api.github.com/repos/sys1yagi/Kotpref/contributors",
+            "subscribers_url": "https://api.github.com/repos/sys1yagi/Kotpref/subscribers",
+            "subscription_url": "https://api.github.com/repos/sys1yagi/Kotpref/subscription",
+            "commits_url": "https://api.github.com/repos/sys1yagi/Kotpref/commits{/sha}",
+            "git_commits_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/commits{/sha}",
+            "comments_url": "https://api.github.com/repos/sys1yagi/Kotpref/comments{/number}",
+            "issue_comment_url": "https://api.github.com/repos/sys1yagi/Kotpref/issues/comments{/number}",
+            "contents_url": "https://api.github.com/repos/sys1yagi/Kotpref/contents/{+path}",
+            "compare_url": "https://api.github.com/repos/sys1yagi/Kotpref/compare/{base}...{head}",
+            "merges_url": "https://api.github.com/repos/sys1yagi/Kotpref/merges",
+            "archive_url": "https://api.github.com/repos/sys1yagi/Kotpref/{archive_format}{/ref}",
+            "downloads_url": "https://api.github.com/repos/sys1yagi/Kotpref/downloads",
+            "issues_url": "https://api.github.com/repos/sys1yagi/Kotpref/issues{/number}",
+            "pulls_url": "https://api.github.com/repos/sys1yagi/Kotpref/pulls{/number}",
+            "milestones_url": "https://api.github.com/repos/sys1yagi/Kotpref/milestones{/number}",
+            "notifications_url": "https://api.github.com/repos/sys1yagi/Kotpref/notifications{?since,all,participating}",
+            "labels_url": "https://api.github.com/repos/sys1yagi/Kotpref/labels{/name}",
+            "releases_url": "https://api.github.com/repos/sys1yagi/Kotpref/releases{/id}",
+            "deployments_url": "https://api.github.com/repos/sys1yagi/Kotpref/deployments",
+            "created_at": "2016-02-05T04:07:39Z",
+            "updated_at": "2016-02-05T04:07:40Z",
+            "pushed_at": "2016-02-05T04:27:30Z",
+            "git_url": "git://github.com/sys1yagi/Kotpref.git",
+            "ssh_url": "git@github.com:sys1yagi/Kotpref.git",
+            "clone_url": "https://github.com/sys1yagi/Kotpref.git",
+            "svn_url": "https://github.com/sys1yagi/Kotpref",
+            "homepage": "",
+            "size": 158,
+            "stargazers_count": 0,
+            "watchers_count": 0,
+            "language": "Kotlin",
+            "has_issues": false,
+            "has_downloads": true,
+            "has_wiki": true,
+            "has_pages": false,
+            "forks_count": 0,
+            "mirror_url": null,
+            "open_issues_count": 0,
+            "forks": 0,
+            "open_issues": 0,
+            "watchers": 0,
+            "default_branch": "master"
+          }
+        },
+        "base": {
+          "label": "chibatching:master",
+          "ref": "master",
+          "sha": "f157c0b88e608b1b83172b22efa0242305722776",
+          "user": {
+            "login": "chibatching",
+            "id": 7804631,
+            "avatar_url": "https://avatars.githubusercontent.com/u/7804631?v=3",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/chibatching",
+            "html_url": "https://github.com/chibatching",
+            "followers_url": "https://api.github.com/users/chibatching/followers",
+            "following_url": "https://api.github.com/users/chibatching/following{/other_user}",
+            "gists_url": "https://api.github.com/users/chibatching/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/chibatching/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/chibatching/subscriptions",
+            "organizations_url": "https://api.github.com/users/chibatching/orgs",
+            "repos_url": "https://api.github.com/users/chibatching/repos",
+            "events_url": "https://api.github.com/users/chibatching/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/chibatching/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "repo": {
+            "id": 40081857,
+            "name": "Kotpref",
+            "full_name": "chibatching/Kotpref",
+            "owner": {
+              "login": "chibatching",
+              "id": 7804631,
+              "avatar_url": "https://avatars.githubusercontent.com/u/7804631?v=3",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/chibatching",
+              "html_url": "https://github.com/chibatching",
+              "followers_url": "https://api.github.com/users/chibatching/followers",
+              "following_url": "https://api.github.com/users/chibatching/following{/other_user}",
+              "gists_url": "https://api.github.com/users/chibatching/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/chibatching/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/chibatching/subscriptions",
+              "organizations_url": "https://api.github.com/users/chibatching/orgs",
+              "repos_url": "https://api.github.com/users/chibatching/repos",
+              "events_url": "https://api.github.com/users/chibatching/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/chibatching/received_events",
+              "type": "User",
+              "site_admin": false
+            },
+            "private": false,
+            "html_url": "https://github.com/chibatching/Kotpref",
+            "description": "Android SharedPreference delegation for Kotlin",
+            "fork": false,
+            "url": "https://api.github.com/repos/chibatching/Kotpref",
+            "forks_url": "https://api.github.com/repos/chibatching/Kotpref/forks",
+            "keys_url": "https://api.github.com/repos/chibatching/Kotpref/keys{/key_id}",
+            "collaborators_url": "https://api.github.com/repos/chibatching/Kotpref/collaborators{/collaborator}",
+            "teams_url": "https://api.github.com/repos/chibatching/Kotpref/teams",
+            "hooks_url": "https://api.github.com/repos/chibatching/Kotpref/hooks",
+            "issue_events_url": "https://api.github.com/repos/chibatching/Kotpref/issues/events{/number}",
+            "events_url": "https://api.github.com/repos/chibatching/Kotpref/events",
+            "assignees_url": "https://api.github.com/repos/chibatching/Kotpref/assignees{/user}",
+            "branches_url": "https://api.github.com/repos/chibatching/Kotpref/branches{/branch}",
+            "tags_url": "https://api.github.com/repos/chibatching/Kotpref/tags",
+            "blobs_url": "https://api.github.com/repos/chibatching/Kotpref/git/blobs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/chibatching/Kotpref/git/tags{/sha}",
+            "git_refs_url": "https://api.github.com/repos/chibatching/Kotpref/git/refs{/sha}",
+            "trees_url": "https://api.github.com/repos/chibatching/Kotpref/git/trees{/sha}",
+            "statuses_url": "https://api.github.com/repos/chibatching/Kotpref/statuses/{sha}",
+            "languages_url": "https://api.github.com/repos/chibatching/Kotpref/languages",
+            "stargazers_url": "https://api.github.com/repos/chibatching/Kotpref/stargazers",
+            "contributors_url": "https://api.github.com/repos/chibatching/Kotpref/contributors",
+            "subscribers_url": "https://api.github.com/repos/chibatching/Kotpref/subscribers",
+            "subscription_url": "https://api.github.com/repos/chibatching/Kotpref/subscription",
+            "commits_url": "https://api.github.com/repos/chibatching/Kotpref/commits{/sha}",
+            "git_commits_url": "https://api.github.com/repos/chibatching/Kotpref/git/commits{/sha}",
+            "comments_url": "https://api.github.com/repos/chibatching/Kotpref/comments{/number}",
+            "issue_comment_url": "https://api.github.com/repos/chibatching/Kotpref/issues/comments{/number}",
+            "contents_url": "https://api.github.com/repos/chibatching/Kotpref/contents/{+path}",
+            "compare_url": "https://api.github.com/repos/chibatching/Kotpref/compare/{base}...{head}",
+            "merges_url": "https://api.github.com/repos/chibatching/Kotpref/merges",
+            "archive_url": "https://api.github.com/repos/chibatching/Kotpref/{archive_format}{/ref}",
+            "downloads_url": "https://api.github.com/repos/chibatching/Kotpref/downloads",
+            "issues_url": "https://api.github.com/repos/chibatching/Kotpref/issues{/number}",
+            "pulls_url": "https://api.github.com/repos/chibatching/Kotpref/pulls{/number}",
+            "milestones_url": "https://api.github.com/repos/chibatching/Kotpref/milestones{/number}",
+            "notifications_url": "https://api.github.com/repos/chibatching/Kotpref/notifications{?since,all,participating}",
+            "labels_url": "https://api.github.com/repos/chibatching/Kotpref/labels{/name}",
+            "releases_url": "https://api.github.com/repos/chibatching/Kotpref/releases{/id}",
+            "deployments_url": "https://api.github.com/repos/chibatching/Kotpref/deployments",
+            "created_at": "2015-08-02T14:27:33Z",
+            "updated_at": "2016-02-04T16:44:07Z",
+            "pushed_at": "2015-12-27T15:44:44Z",
+            "git_url": "git://github.com/chibatching/Kotpref.git",
+            "ssh_url": "git@github.com:chibatching/Kotpref.git",
+            "clone_url": "https://github.com/chibatching/Kotpref.git",
+            "svn_url": "https://github.com/chibatching/Kotpref",
+            "homepage": "",
+            "size": 156,
+            "stargazers_count": 32,
+            "watchers_count": 32,
+            "language": "Kotlin",
+            "has_issues": true,
+            "has_downloads": true,
+            "has_wiki": true,
+            "has_pages": false,
+            "forks_count": 2,
+            "mirror_url": null,
+            "open_issues_count": 1,
+            "forks": 2,
+            "open_issues": 1,
+            "watchers": 32,
+            "default_branch": "master"
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "https://api.github.com/repos/chibatching/Kotpref/pulls/10"
+          },
+          "html": {
+            "href": "https://github.com/chibatching/Kotpref/pull/10"
+          },
+          "issue": {
+            "href": "https://api.github.com/repos/chibatching/Kotpref/issues/10"
+          },
+          "comments": {
+            "href": "https://api.github.com/repos/chibatching/Kotpref/issues/10/comments"
+          },
+          "review_comments": {
+            "href": "https://api.github.com/repos/chibatching/Kotpref/pulls/10/comments"
+          },
+          "review_comment": {
+            "href": "https://api.github.com/repos/chibatching/Kotpref/pulls/comments{/number}"
+          },
+          "commits": {
+            "href": "https://api.github.com/repos/chibatching/Kotpref/pulls/10/commits"
+          },
+          "statuses": {
+            "href": "https://api.github.com/repos/chibatching/Kotpref/statuses/c81104d242feb1fa75b5851a1eaeb3b83082a778"
+          }
+        },
+        "merged": false,
+        "mergeable": null,
+        "mergeable_state": "unknown",
+        "merged_by": null,
+        "comments": 0,
+        "review_comments": 0,
+        "commits": 2,
+        "additions": 4,
+        "deletions": 4,
+        "changed_files": 4
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T04:31:07Z"
+  },
+  {
+    "id": "3610315956",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 51125189,
+      "name": "sys1yagi/Kotpref",
+      "url": "https://api.github.com/repos/sys1yagi/Kotpref"
+    },
+    "payload": {
+      "ref": "bump_up_kotlin_version",
+      "ref_type": "branch",
+      "master_branch": "master",
+      "description": "Android SharedPreference delegation for Kotlin",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2016-02-05T04:27:30Z"
+  },
+  {
+    "id": "3610279111",
+    "type": "ForkEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 40081857,
+      "name": "chibatching/Kotpref",
+      "url": "https://api.github.com/repos/chibatching/Kotpref"
+    },
+    "payload": {
+      "forkee": {
+        "id": 51125189,
+        "name": "Kotpref",
+        "full_name": "sys1yagi/Kotpref",
+        "owner": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "private": false,
+        "html_url": "https://github.com/sys1yagi/Kotpref",
+        "description": "Android SharedPreference delegation for Kotlin",
+        "fork": true,
+        "url": "https://api.github.com/repos/sys1yagi/Kotpref",
+        "forks_url": "https://api.github.com/repos/sys1yagi/Kotpref/forks",
+        "keys_url": "https://api.github.com/repos/sys1yagi/Kotpref/keys{/key_id}",
+        "collaborators_url": "https://api.github.com/repos/sys1yagi/Kotpref/collaborators{/collaborator}",
+        "teams_url": "https://api.github.com/repos/sys1yagi/Kotpref/teams",
+        "hooks_url": "https://api.github.com/repos/sys1yagi/Kotpref/hooks",
+        "issue_events_url": "https://api.github.com/repos/sys1yagi/Kotpref/issues/events{/number}",
+        "events_url": "https://api.github.com/repos/sys1yagi/Kotpref/events",
+        "assignees_url": "https://api.github.com/repos/sys1yagi/Kotpref/assignees{/user}",
+        "branches_url": "https://api.github.com/repos/sys1yagi/Kotpref/branches{/branch}",
+        "tags_url": "https://api.github.com/repos/sys1yagi/Kotpref/tags",
+        "blobs_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/blobs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/tags{/sha}",
+        "git_refs_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/refs{/sha}",
+        "trees_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/trees{/sha}",
+        "statuses_url": "https://api.github.com/repos/sys1yagi/Kotpref/statuses/{sha}",
+        "languages_url": "https://api.github.com/repos/sys1yagi/Kotpref/languages",
+        "stargazers_url": "https://api.github.com/repos/sys1yagi/Kotpref/stargazers",
+        "contributors_url": "https://api.github.com/repos/sys1yagi/Kotpref/contributors",
+        "subscribers_url": "https://api.github.com/repos/sys1yagi/Kotpref/subscribers",
+        "subscription_url": "https://api.github.com/repos/sys1yagi/Kotpref/subscription",
+        "commits_url": "https://api.github.com/repos/sys1yagi/Kotpref/commits{/sha}",
+        "git_commits_url": "https://api.github.com/repos/sys1yagi/Kotpref/git/commits{/sha}",
+        "comments_url": "https://api.github.com/repos/sys1yagi/Kotpref/comments{/number}",
+        "issue_comment_url": "https://api.github.com/repos/sys1yagi/Kotpref/issues/comments{/number}",
+        "contents_url": "https://api.github.com/repos/sys1yagi/Kotpref/contents/{+path}",
+        "compare_url": "https://api.github.com/repos/sys1yagi/Kotpref/compare/{base}...{head}",
+        "merges_url": "https://api.github.com/repos/sys1yagi/Kotpref/merges",
+        "archive_url": "https://api.github.com/repos/sys1yagi/Kotpref/{archive_format}{/ref}",
+        "downloads_url": "https://api.github.com/repos/sys1yagi/Kotpref/downloads",
+        "issues_url": "https://api.github.com/repos/sys1yagi/Kotpref/issues{/number}",
+        "pulls_url": "https://api.github.com/repos/sys1yagi/Kotpref/pulls{/number}",
+        "milestones_url": "https://api.github.com/repos/sys1yagi/Kotpref/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/sys1yagi/Kotpref/notifications{?since,all,participating}",
+        "labels_url": "https://api.github.com/repos/sys1yagi/Kotpref/labels{/name}",
+        "releases_url": "https://api.github.com/repos/sys1yagi/Kotpref/releases{/id}",
+        "deployments_url": "https://api.github.com/repos/sys1yagi/Kotpref/deployments",
+        "created_at": "2016-02-05T04:07:39Z",
+        "updated_at": "2016-02-04T16:44:07Z",
+        "pushed_at": "2015-12-27T15:44:44Z",
+        "git_url": "git://github.com/sys1yagi/Kotpref.git",
+        "ssh_url": "git@github.com:sys1yagi/Kotpref.git",
+        "clone_url": "https://github.com/sys1yagi/Kotpref.git",
+        "svn_url": "https://github.com/sys1yagi/Kotpref",
+        "homepage": "",
+        "size": 156,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "language": null,
+        "has_issues": false,
+        "has_downloads": true,
+        "has_wiki": true,
+        "has_pages": false,
+        "forks_count": 0,
+        "mirror_url": null,
+        "open_issues_count": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "watchers": 0,
+        "default_branch": "master",
+        "public": true
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T04:07:39Z"
+  },
+  {
+    "id": "3610073964",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 964893492,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "a4c8ec25b8be0a9d9174c68e38a259746493fa6b",
+      "before": "acbff372d3d87f9a7e03669d60ca965f295f9a2f",
+      "commits": [
+        {
+          "sha": "a4c8ec25b8be0a9d9174c68e38a259746493fa6b",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Update gradle plugin.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/a4c8ec25b8be0a9d9174c68e38a259746493fa6b"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T02:24:17Z"
+  },
+  {
+    "id": "3606860577",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "action": "opened",
+      "issue": {
+        "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/7",
+        "repository_url": "https://api.github.com/repos/sys1yagi/longest-streak-android",
+        "labels_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/7/labels{/name}",
+        "comments_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/7/comments",
+        "events_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/7/events",
+        "html_url": "https://github.com/sys1yagi/longest-streak-android/issues/7",
+        "id": 131345467,
+        "number": 7,
+        "title": "Edit user setting.",
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2016-02-04T13:22:43Z",
+        "updated_at": "2016-02-04T13:22:43Z",
+        "closed_at": null,
+        "body": ""
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T13:22:43Z"
+  },
+  {
+    "id": "3606859110",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "action": "opened",
+      "issue": {
+        "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/6",
+        "repository_url": "https://api.github.com/repos/sys1yagi/longest-streak-android",
+        "labels_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/6/labels{/name}",
+        "comments_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/6/comments",
+        "events_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/6/events",
+        "html_url": "https://github.com/sys1yagi/longest-streak-android/issues/6",
+        "id": 131345319,
+        "number": 6,
+        "title": "Sync public contribution when The first time you start app.",
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2016-02-04T13:22:18Z",
+        "updated_at": "2016-02-04T13:22:18Z",
+        "closed_at": null,
+        "body": ""
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T13:22:18Z"
+  },
+  {
+    "id": "3606848509",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2",
+        "repository_url": "https://api.github.com/repos/sys1yagi/longest-streak-android",
+        "labels_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2/labels{/name}",
+        "comments_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2/comments",
+        "events_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2/events",
+        "html_url": "https://github.com/sys1yagi/longest-streak-android/issues/2",
+        "id": 130083325,
+        "number": 2,
+        "title": "Notify to if have not yet contributed",
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2016-01-31T05:19:41Z",
+        "updated_at": "2016-02-04T13:19:27Z",
+        "closed_at": "2016-02-04T13:19:27Z",
+        "body": ""
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T13:19:28Z"
+  },
+  {
+    "id": "3606848507",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2",
+        "repository_url": "https://api.github.com/repos/sys1yagi/longest-streak-android",
+        "labels_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2/labels{/name}",
+        "comments_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2/comments",
+        "events_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2/events",
+        "html_url": "https://github.com/sys1yagi/longest-streak-android/issues/2",
+        "id": 130083325,
+        "number": 2,
+        "title": "Notify to if have not yet contributed",
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2016-01-31T05:19:41Z",
+        "updated_at": "2016-02-04T13:19:27Z",
+        "closed_at": "2016-02-04T13:19:27Z",
+        "body": ""
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/comments/179827999",
+        "html_url": "https://github.com/sys1yagi/longest-streak-android/issues/2#issuecomment-179827999",
+        "issue_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/2",
+        "id": 179827999,
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "created_at": "2016-02-04T13:19:27Z",
+        "updated_at": "2016-02-04T13:19:27Z",
+        "body": "acbff372d3d87f9a7e03669d60ca965f295f9a2f"
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T13:19:28Z"
+  },
+  {
+    "id": "3606137740",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 963500633,
+      "size": 2,
+      "distinct_size": 2,
+      "ref": "refs/heads/master",
+      "head": "acbff372d3d87f9a7e03669d60ca965f295f9a2f",
+      "before": "9d9bb519fcdcd02dddac0b901b00c5f1dcdd227a",
+      "commits": [
+        {
+          "sha": "ab2d303014f6a71bcf44d19302dbf50794bd630a",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Use the zoneId of the sharedpreferences.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/ab2d303014f6a71bcf44d19302dbf50794bd630a"
+        },
+        {
+          "sha": "acbff372d3d87f9a7e03669d60ca965f295f9a2f",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Check contribution and notify status.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/acbff372d3d87f9a7e03669d60ca965f295f9a2f"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T09:53:33Z"
+  },
+  {
+    "id": "3605882596",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50273924,
+      "name": "sys1yagi/alarm-manager-simplify",
+      "url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify"
+    },
+    "payload": {
+      "action": "opened",
+      "issue": {
+        "url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify/issues/6",
+        "repository_url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify",
+        "labels_url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify/issues/6/labels{/name}",
+        "comments_url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify/issues/6/comments",
+        "events_url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify/issues/6/events",
+        "html_url": "https://github.com/sys1yagi/alarm-manager-simplify/issues/6",
+        "id": 131278113,
+        "number": 6,
+        "title": "Testable Scheduler.",
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2016-02-04T08:35:52Z",
+        "updated_at": "2016-02-04T08:35:52Z",
+        "closed_at": null,
+        "body": "AlarmManager is mockable.\r\nHowever, TimeController can not mock because it uses the System.currentTimeMillis() in the static method.\r\n\r\n```java\r\npublic final class PollingAlarmProcessorScheduler {\r\n  public static void scheduleRtcWakeup(Context context, int interval) {\r\n    try {\r\n      AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);\r\n      Intent intent = new Intent(context, Class.forName(\"com.sys1yagi.android.alarmmanagersimplify.SimplifiedAlarmReceiver\"));\r\n      intent.putExtra(\"event\", \"polling\");\r\n      PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 1, intent, 0);\r\n      alarmManager.cancel(pendingIntent);\r\n      alarmManager.set(AlarmManager.RTC_WAKEUP, TimeController.millisAfter(interval), pendingIntent);\r\n    } catch(ClassNotFoundException e) {\r\n      throw new IllegalStateException(e);\r\n    }\r\n  }\r\n}\r\n```\r\n\r\nexpected:\r\n\r\n\r\n```java\r\npublic final class PollingAlarmProcessorScheduler {\r\n  public void scheduleRtcWakeup(Context context, int interval) { \r\n    scheduleRtcWakeup(context, interval, DEFAULT_TIME_PROVIDER);\r\n  } \r\n  public void scheduleRtcWakeup(Context context, int interval, TimeProvider timeProvider) {\r\n    try {\r\n      AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);\r\n      Intent intent = new Intent(context, Class.forName(\"com.sys1yagi.android.alarmmanagersimplify.SimplifiedAlarmReceiver\"));\r\n      intent.putExtra(\"event\", \"polling\");\r\n      PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 1, intent, 0);\r\n      alarmManager.cancel(pendingIntent);\r\n      alarmManager.set(AlarmManager.RTC_WAKEUP, TimeController.millisAfter(interval, timeProvider), pendingIntent);\r\n    } catch(ClassNotFoundException e) {\r\n      throw new IllegalStateException(e);\r\n    }\r\n  }\r\n}\r\n```"
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T08:35:52Z"
+  },
+  {
+    "id": "3605408742",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 963226317,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "9d9bb519fcdcd02dddac0b901b00c5f1dcdd227a",
+      "before": "1c22b15c6159492efe46c92db4785dce4cf4cce2",
+      "commits": [
+        {
+          "sha": "9d9bb519fcdcd02dddac0b901b00c5f1dcdd227a",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Update gradle plugin.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/9d9bb519fcdcd02dddac0b901b00c5f1dcdd227a"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T04:58:05Z"
+  },
+  {
+    "id": "3600072395",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 961322319,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "1c22b15c6159492efe46c92db4785dce4cf4cce2",
+      "before": "c187d0c77ef2967864743227bb94ccaa8383b854",
+      "commits": [
+        {
+          "sha": "1c22b15c6159492efe46c92db4785dce4cf4cce2",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Replace db to preference.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/1c22b15c6159492efe46c92db4785dce4cf4cce2"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T02:47:13Z"
+  },
+  {
+    "id": "3597273306",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 960371135,
+      "size": 3,
+      "distinct_size": 3,
+      "ref": "refs/heads/master",
+      "head": "c187d0c77ef2967864743227bb94ccaa8383b854",
+      "before": "15b783da6ae1ccafefcae4780ce5968c69503029",
+      "commits": [
+        {
+          "sha": "861cf56d70bef61c1d1fb45a89951c4d6fe59cca",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Close connection when terminate app.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/861cf56d70bef61c1d1fb45a89951c4d6fe59cca"
+        },
+        {
+          "sha": "51884ddd351ef3e892132e1242f1e2dec286b6b3",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Introduce Stetho.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/51884ddd351ef3e892132e1242f1e2dec286b6b3"
+        },
+        {
+          "sha": "c187d0c77ef2967864743227bb94ccaa8383b854",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "downgrade orma.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/c187d0c77ef2967864743227bb94ccaa8383b854"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T15:23:46Z"
+  },
+  {
+    "id": "3594829292",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 959475604,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "15b783da6ae1ccafefcae4780ce5968c69503029",
+      "before": "e41e7ea6ebdae413fee23320666519881deed62e",
+      "commits": [
+        {
+          "sha": "15b783da6ae1ccafefcae4780ce5968c69503029",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Simplify.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/15b783da6ae1ccafefcae4780ce5968c69503029"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T01:50:25Z"
+  },
+  {
+    "id": "3592585505",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 958733317,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "e41e7ea6ebdae413fee23320666519881deed62e",
+      "before": "18843266b574c5c8e2df2217758dadecfef37520",
+      "commits": [
+        {
+          "sha": "e41e7ea6ebdae413fee23320666519881deed62e",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Remove code for development.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/e41e7ea6ebdae413fee23320666519881deed62e"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T16:32:40Z"
+  },
+  {
+    "id": "3592575779",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/5",
+        "labels_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/5/labels{/name}",
+        "comments_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/5/comments",
+        "events_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/5/events",
+        "html_url": "https://github.com/sys1yagi/longest-streak-android/issues/5",
+        "id": 130306456,
+        "number": 5,
+        "title": "Account settings",
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2016-02-01T09:22:21Z",
+        "updated_at": "2016-02-01T16:30:42Z",
+        "closed_at": "2016-02-01T16:30:42Z",
+        "body": "The app need the information below.\r\n\r\n- name : for call users api\r\n- email : for commits verification\r\n- zoneid : time zone"
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T16:30:44Z"
+  },
+  {
+    "id": "3592558448",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 958723764,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "18843266b574c5c8e2df2217758dadecfef37520",
+      "before": "8d49a13ae7285ed2de224bb8da8cc707e252cc15",
+      "commits": [
+        {
+          "sha": "18843266b574c5c8e2df2217758dadecfef37520",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Add account setting form.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/18843266b574c5c8e2df2217758dadecfef37520"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T16:27:06Z"
+  },
+  {
+    "id": "3592149470",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 958582520,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "8d49a13ae7285ed2de224bb8da8cc707e252cc15",
+      "before": "9d342d8c835ebd8cfbd281677b47940286733a7b",
+      "commits": [
+        {
+          "sha": "8d49a13ae7285ed2de224bb8da8cc707e252cc15",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Update alarm-manager-processor.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/8d49a13ae7285ed2de224bb8da8cc707e252cc15"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T15:03:26Z"
+  },
+  {
+    "id": "3592143813",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50273924,
+      "name": "sys1yagi/alarm-manager-simplify",
+      "url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify"
+    },
+    "payload": {
+      "push_id": 958580541,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "a57cfa39cb1895d5ff84bea0700bc3849505834d",
+      "before": "644c54cdcdb29be7a72bc0fcc22abb45f957fe4d",
+      "commits": [
+        {
+          "sha": "a57cfa39cb1895d5ff84bea0700bc3849505834d",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "v0.3.1 released.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify/commits/a57cfa39cb1895d5ff84bea0700bc3849505834d"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T15:02:11Z"
+  },
+  {
+    "id": "3592130567",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 958576062,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "9d342d8c835ebd8cfbd281677b47940286733a7b",
+      "before": "9b66f1419530dcda4457da5cc64302916ec88838",
+      "commits": [
+        {
+          "sha": "9d342d8c835ebd8cfbd281677b47940286733a7b",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Update gradle.properties.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/9d342d8c835ebd8cfbd281677b47940286733a7b"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T14:59:26Z"
+  },
+  {
+    "id": "3592128807",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 49106842,
+      "name": "sys1yagi/fragment-creator",
+      "url": "https://api.github.com/repos/sys1yagi/fragment-creator"
+    },
+    "payload": {
+      "push_id": 958575468,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "4ac93ca51dfa49c77a94350d57b548f0810e101e",
+      "before": "0104293aa221bdb5b2922691794e6f2c3889ee70",
+      "commits": [
+        {
+          "sha": "4ac93ca51dfa49c77a94350d57b548f0810e101e",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "v 0.6.1 released.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/fragment-creator/commits/4ac93ca51dfa49c77a94350d57b548f0810e101e"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T14:59:04Z"
+  },
+  {
+    "id": "3592120819",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50273924,
+      "name": "sys1yagi/alarm-manager-simplify",
+      "url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify"
+    },
+    "payload": {
+      "ref": "0.3.1",
+      "ref_type": "tag",
+      "master_branch": "master",
+      "description": "Alarm Manager Simplify is a code generation library to simplify the code for AlarmManager on Android.",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2016-02-05T14:57:22Z"
+  },
+  {
+    "id": "3592118174",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50273924,
+      "name": "sys1yagi/alarm-manager-simplify",
+      "url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify"
+    },
+    "payload": {
+      "push_id": 958571730,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "644c54cdcdb29be7a72bc0fcc22abb45f957fe4d",
+      "before": "3e3d614b04e683be1e3a1df1a35ba2c902d3d165",
+      "commits": [
+        {
+          "sha": "644c54cdcdb29be7a72bc0fcc22abb45f957fe4d",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "workaround for kapt.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/alarm-manager-simplify/commits/644c54cdcdb29be7a72bc0fcc22abb45f957fe4d"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T14:56:47Z"
+  },
+  {
+    "id": "3591466884",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 958332989,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "9b66f1419530dcda4457da5cc64302916ec88838",
+      "before": "7d58237e18866d3796c8e8aa38564496b69bb357",
+      "commits": [
+        {
+          "sha": "9b66f1419530dcda4457da5cc64302916ec88838",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Fix package name.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/9b66f1419530dcda4457da5cc64302916ec88838"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T11:55:53Z"
+  },
+  {
+    "id": "3591450616",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 958327032,
+      "size": 2,
+      "distinct_size": 2,
+      "ref": "refs/heads/master",
+      "head": "7d58237e18866d3796c8e8aa38564496b69bb357",
+      "before": "4832bf5418fe60f2049117a6b26cb60c1f3ef799",
+      "commits": [
+        {
+          "sha": "617bbeea40dd1e3a181aae4d2ea2d562ac2fac6d",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Update db schema.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/617bbeea40dd1e3a181aae4d2ea2d562ac2fac6d"
+        },
+        {
+          "sha": "7d58237e18866d3796c8e8aa38564496b69bb357",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Introduce fragment.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/7d58237e18866d3796c8e8aa38564496b69bb357"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T11:50:37Z"
+  },
+  {
+    "id": "3591409800",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 49106842,
+      "name": "sys1yagi/fragment-creator",
+      "url": "https://api.github.com/repos/sys1yagi/fragment-creator"
+    },
+    "payload": {
+      "ref": "0.6.1",
+      "ref_type": "tag",
+      "master_branch": "master",
+      "description": "Fragment Creator is a code generation library to manage fragment class creation and arguments for Android.",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2016-02-05T11:37:17Z"
+  },
+  {
+    "id": "3591408018",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 49106842,
+      "name": "sys1yagi/fragment-creator",
+      "url": "https://api.github.com/repos/sys1yagi/fragment-creator"
+    },
+    "payload": {
+      "push_id": 958311005,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "0104293aa221bdb5b2922691794e6f2c3889ee70",
+      "before": "5b5ecfc1f97e2b69847bd31d74942ecc0426da8e",
+      "commits": [
+        {
+          "sha": "0104293aa221bdb5b2922691794e6f2c3889ee70",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Update annotation RetentionPolicy.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/fragment-creator/commits/0104293aa221bdb5b2922691794e6f2c3889ee70"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T11:36:44Z"
+  },
+  {
+    "id": "3591086390",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 49106842,
+      "name": "sys1yagi/fragment-creator",
+      "url": "https://api.github.com/repos/sys1yagi/fragment-creator"
+    },
+    "payload": {
+      "push_id": 958196455,
+      "size": 2,
+      "distinct_size": 2,
+      "ref": "refs/heads/master",
+      "head": "5b5ecfc1f97e2b69847bd31d74942ecc0426da8e",
+      "before": "e752a24ce7eada8ded57e962c2102a44bc533342",
+      "commits": [
+        {
+          "sha": "e0d879a66a5eccc76ec629cbda186dc0e67f2e86",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Remove unnecessary dependency.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/fragment-creator/commits/e0d879a66a5eccc76ec629cbda186dc0e67f2e86"
+        },
+        {
+          "sha": "5b5ecfc1f97e2b69847bd31d74942ecc0426da8e",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Update gradle plugin.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/fragment-creator/commits/5b5ecfc1f97e2b69847bd31d74942ecc0426da8e"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T10:03:59Z"
+  },
+  {
+    "id": "3590940218",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "action": "opened",
+      "issue": {
+        "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/5",
+        "labels_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/5/labels{/name}",
+        "comments_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/5/comments",
+        "events_url": "https://api.github.com/repos/sys1yagi/longest-streak-android/issues/5/events",
+        "html_url": "https://github.com/sys1yagi/longest-streak-android/issues/5",
+        "id": 130306456,
+        "number": 5,
+        "title": "Account settings",
+        "user": {
+          "login": "sys1yagi",
+          "id": 749051,
+          "avatar_url": "https://avatars.githubusercontent.com/u/749051?v=3",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/sys1yagi",
+          "html_url": "https://github.com/sys1yagi",
+          "followers_url": "https://api.github.com/users/sys1yagi/followers",
+          "following_url": "https://api.github.com/users/sys1yagi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/sys1yagi/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/sys1yagi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/sys1yagi/subscriptions",
+          "organizations_url": "https://api.github.com/users/sys1yagi/orgs",
+          "repos_url": "https://api.github.com/users/sys1yagi/repos",
+          "events_url": "https://api.github.com/users/sys1yagi/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/sys1yagi/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2016-02-01T09:22:21Z",
+        "updated_at": "2016-02-01T09:22:21Z",
+        "closed_at": null,
+        "body": "The app need the information below.\r\n\r\n- name : for call users api\r\n- email : for commits verification\r\n- zoneid : time zone"
+      }
+    },
+    "public": true,
+    "created_at": "2016-02-05T09:22:22Z"
+  },
+  {
+    "id": "3590235659",
+    "type": "PushEvent",
+    "actor": {
+      "id": 749051,
+      "login": "sys1yagi",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sys1yagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/749051?"
+    },
+    "repo": {
+      "id": 50709622,
+      "name": "sys1yagi/longest-streak-android",
+      "url": "https://api.github.com/repos/sys1yagi/longest-streak-android"
+    },
+    "payload": {
+      "push_id": 957876532,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/master",
+      "head": "4832bf5418fe60f2049117a6b26cb60c1f3ef799",
+      "before": "4bd8153f13f23c667130d3e3f6c20dedc1a78af3",
+      "commits": [
+        {
+          "sha": "4832bf5418fe60f2049117a6b26cb60c1f3ef799",
+          "author": {
+            "email": "sylc.yagi@gmail.com",
+            "name": "sys1yagi"
+          },
+          "message": "Update the way of the count of public contribution.",
+          "distinct": true,
+          "url": "https://api.github.com/repos/sys1yagi/longest-streak-android/commits/4832bf5418fe60f2049117a6b26cb60c1f3ef799"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2016-02-05T03:47:59Z"
+  }
+]

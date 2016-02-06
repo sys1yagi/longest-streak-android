@@ -40,6 +40,9 @@ public class Issue {
     @SerializedName("comments")
     private int comments;
 
+    @SerializedName("user")
+    private User user;
+
     public long getId() {
         return id;
     }
@@ -86,5 +89,9 @@ public class Issue {
 
     public int getComments() {
         return comments;
+    }
+
+    public User getUser() {
+        return user;
     }
 }

@@ -1,5 +1,6 @@
 package com.sys1yagi.longeststreakandroid.tool
 
+import com.google.common.reflect.TypeToken
 import com.sys1yagi.longeststreakandroid.BuildConfig
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.model.Event
@@ -55,7 +56,13 @@ class PublicContributionJudgementTest {
     }
 
     @Test
-    fun notContribution() {
+    fun complexMultiContributionEvent() {
+        val type = object : TypeToken<List<Event>>() {}.type
+        val events = GsonProvider.instance.fromJson<List<Event>>(AssetsUtilForTest.readString("ComplexMultiContributionEvents.json"), type)
+        val accessor = DateTimeFormatter.ISO_DATE_TIME.parse("2016-02-05T05:22:25Z");
+        val now = LocalDateTime.from(accessor).toInstant(ZoneOffset.from(accessor)).toEpochMilli()
 
+        assertThat(publicContributionJudgement.todayContributionCount("sys1yagi", "Asia/Tokyo", now, events))
+                .isEqualTo(22)
     }
 }
