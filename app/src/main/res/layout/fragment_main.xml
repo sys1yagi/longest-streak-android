@@ -45,12 +45,20 @@
                 android:layout_gravity="center"
                 android:orientation="vertical">
             <TextView
+                    android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/text_margin"
                     android:layout_gravity="center"
                     android:textSize="@dimen/text_size_today"
                     android:textColor="@color/text"
+                    tools:text="Hi! sys1yagi"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size_today"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
                     android:text="@string/today"/>
             <TextView
                     android:id="@+id/today_status"

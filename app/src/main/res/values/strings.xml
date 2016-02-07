@@ -11,4 +11,6 @@
     <string name="hint_zoneid_time_zone">zoneid : time zone (ex. Asia/Tokyo)</string>
     <string name="register">REGISTER</string>
     <string name="github_account_setup">Github Account Setup</string>
+    <string name="menu_settings">Settings</string>
+    <string name="hi_today">Hi! %1$s</string>
 </resources>

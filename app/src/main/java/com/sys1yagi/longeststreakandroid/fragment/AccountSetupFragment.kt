@@ -5,6 +5,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.sys1yagi.fragmentcreator.annotation.Args
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
 import com.sys1yagi.longeststreakandroid.R
 import com.sys1yagi.longeststreakandroid.databinding.FragmentAccountSetupBinding
@@ -17,10 +18,19 @@ import org.threeten.bp.ZoneId
 @FragmentCreator
 class AccountSetupFragment : RxFragment() {
 
+    @Args(require = false)
+    var isEditMode: Boolean = false
+
     lateinit var binding: FragmentAccountSetupBinding
+
+    // workaround for fragment-creator
+    fun setIsEditMode(isEditMode: Boolean) {
+        this.isEditMode = isEditMode
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AccountSetupFragmentCreator.read(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
@@ -31,6 +41,10 @@ class AccountSetupFragment : RxFragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.editName.setText(Account.name)
+        binding.editEmail.setText(Account.email)
+        binding.editZoneId.setText(Account.zoneId)
 
         binding.registerButton.setOnClickListener {
             v ->
@@ -47,9 +61,13 @@ class AccountSetupFragment : RxFragment() {
     }
 
     fun openMainFragment() {
-        fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, MainFragmentCreator.newBuilder().build())
-                .commit()
+        if (isEditMode) {
+            fragmentManager.popBackStack()
+        } else {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, MainFragmentCreator.newBuilder().build())
+                    .commit()
+        }
     }
 
     fun saveAccount(name: String, email: String, zoneId: String) {
