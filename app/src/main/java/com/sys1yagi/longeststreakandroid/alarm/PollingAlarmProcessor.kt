@@ -2,13 +2,13 @@ package com.sys1yagi.longeststreakandroid.alarm
 
 import android.content.Context
 import android.content.Intent
-import android.text.TextUtils
 import android.util.Log
 import com.sys1yagi.android.alarmmanagersimplify.AlarmProcessor
 import com.sys1yagi.android.alarmmanagersimplify.annotation.Simplify
+import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.api.GithubService
+import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.notification.LocalNotificationHelper
-import com.sys1yagi.longeststreakandroid.preference.Account
 import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
 import org.threeten.bp.Instant
 import org.threeten.bp.OffsetDateTime
@@ -46,17 +46,18 @@ class PollingAlarmProcessor : AlarmProcessor {
 
     override fun process(context: Context, intent: Intent) {
         Log.d(TAG, "PollingAlarmProcessor.process")
-        if (TextUtils.isEmpty(Account.name)) {
+        val settings = Settings.getRecord(LongestStreakApplication.database)
+        if (settings == null) {
             Log.d(TAG, "Account not initialized yet")
             nextAlarmAfterAnHour(context)
             return
         }
-        GithubService.client.userEvents(Account.name)
+        GithubService.client.userEvents(settings.name)
                 .subscribe(
                         { events ->
                             val now = System.currentTimeMillis()
-                            val count = JUDGEMENT.todayContributionCount(Account.name,
-                                    Account.zoneId,
+                            val count = JUDGEMENT.todayContributionCount(settings.name,
+                                    settings.zoneId,
                                     now,
                                     events)
                             if ( count == 0) {
@@ -66,7 +67,7 @@ class PollingAlarmProcessor : AlarmProcessor {
                             } else {
                                 Log.d(TAG, "Already you contributed today! Next alarm is tomorrow.")
                                 notifyAlreadyContributedToday(context)
-                                nextAlarmTomorrow(context, now, Account.zoneId)
+                                nextAlarmTomorrow(context, now, settings.zoneId)
                             }
                         },
                         { error ->

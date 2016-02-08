@@ -5,11 +5,12 @@ import android.support.v4.content.ContextCompat
 import android.view.*
 import com.cookpad.android.rxt4a.schedulers.AndroidSchedulers
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
+import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
 import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.databinding.FragmentMainBinding
+import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.model.Event
-import com.sys1yagi.longeststreakandroid.preference.Account
 import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
 import com.trello.rxlifecycle.components.support.RxFragment
 import rx.schedulers.Schedulers
@@ -17,13 +18,14 @@ import rx.schedulers.Schedulers
 @FragmentCreator
 class MainFragment : RxFragment() {
 
+    lateinit var settings: Settings
+
     lateinit var binding: FragmentMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MainFragmentCreator.read(this)
         setHasOptionsMenu(true)
-
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,7 +35,8 @@ class MainFragment : RxFragment() {
 
     override fun onResume() {
         super.onResume()
-        checkContributionOfTheToday(Account.name, Account.zoneId)
+        settings = Settings.getRecord(LongestStreakApplication.database)?.let { it } ?: Settings()
+        checkContributionOfTheToday(settings)
     }
 
     fun showProgress() {
@@ -55,28 +58,28 @@ class MainFragment : RxFragment() {
         binding.errorText.text = error.message
     }
 
-    fun checkContributionOfTheToday(name: String, zoneId: String) {
+    fun checkContributionOfTheToday(settings: Settings) {
         showProgress()
 
-        GithubService.client.userEvents(name)
+        GithubService.client.userEvents(settings.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(bindToLifecycle<List<Event>>())
                 .subscribe(
-                        { events -> setupStatus(name, zoneId, events) },
+                        { events -> setupStatus(settings, events) },
                         { error -> showError(error) }
                 )
     }
 
-    fun setupStatus(name: String, zoneId: String, events: List<Event>) {
+    fun setupStatus(settings: Settings, events: List<Event>) {
         showStatus()
 
         val publicContributionJudgement = PublicContributionJudgement()
         val count = publicContributionJudgement.todayContributionCount(
-                name, zoneId,
+                settings.name, settings.zoneId,
                 System.currentTimeMillis(),
                 events);
-        binding.userName.text = getString(R.string.hi_today, Account.name)
+        binding.userName.text = getString(R.string.hi_today, settings.name)
         if (count > 0) {
             alreadyContributed(count)
         } else {

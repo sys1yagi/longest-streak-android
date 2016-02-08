@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.sys1yagi.fragmentcreator.annotation.Args
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
+import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
 import com.sys1yagi.longeststreakandroid.databinding.FragmentAccountSetupBinding
-import com.sys1yagi.longeststreakandroid.preference.Account
+import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.tool.KeyboardManager
 import com.trello.rxlifecycle.components.support.RxFragment
 import org.threeten.bp.DateTimeException
@@ -41,26 +42,27 @@ class AccountSetupFragment : RxFragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.editName.setText(Account.name)
-        binding.editEmail.setText(Account.email)
-        binding.editZoneId.setText(Account.zoneId)
+        Settings.getRecord(LongestStreakApplication.database)?.let {
+            binding.editName.setText(it.name)
+            binding.editEmail.setText(it.email)
+            binding.editZoneId.setText(it.zoneId)
+        }
 
         binding.registerButton.setOnClickListener {
             v ->
             if (verifyName(binding) && verifyEmail(binding) && verifyZoneId(binding)) {
-                saveAccount(
+                val settings = saveAccount(
                         binding.editName.text.toString(),
                         binding.editEmail.text.toString(),
                         binding.editZoneId.text.toString()
                 )
-                openMainFragment()
+                openMainFragment(settings)
             }
         }
         KeyboardManager.show(context)
     }
 
-    fun openMainFragment() {
+    fun openMainFragment(settings: Settings) {
         if (isEditMode) {
             fragmentManager.popBackStack()
         } else {
@@ -70,10 +72,12 @@ class AccountSetupFragment : RxFragment() {
         }
     }
 
-    fun saveAccount(name: String, email: String, zoneId: String) {
-        Account.name = name
-        Account.email = email
-        Account.zoneId = zoneId
+    fun saveAccount(name: String, email: String, zoneId: String): Settings {
+        val (settings, saveAction) = Settings.getRecordAndAction(LongestStreakApplication.database)
+        settings.name = name
+        settings.email = email
+        settings.zoneId = zoneId
+        return saveAction.invoke(settings)
     }
 
     fun verifyName(binding: FragmentAccountSetupBinding): Boolean {
