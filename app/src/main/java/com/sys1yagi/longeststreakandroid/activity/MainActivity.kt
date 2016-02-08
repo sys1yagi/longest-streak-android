@@ -19,8 +19,7 @@ class MainActivity : RxAppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         if (savedInstanceState == null) {
-            val settings = Settings.getRecord(LongestStreakApplication.database)
-            if (settings == null) {
+            if (!Settings.alreadyInitialized(LongestStreakApplication.database)) {
                 supportFragmentManager.beginTransaction()
                         .add(R.id.content_frame, AccountSetupFragmentCreator.newBuilder().build())
                         .commit()

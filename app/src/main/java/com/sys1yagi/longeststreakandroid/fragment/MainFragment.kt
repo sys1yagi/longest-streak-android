@@ -17,7 +17,7 @@ import rx.schedulers.Schedulers
 
 @FragmentCreator
 class MainFragment : RxFragment() {
-
+    
     lateinit var settings: Settings
 
     lateinit var binding: FragmentMainBinding

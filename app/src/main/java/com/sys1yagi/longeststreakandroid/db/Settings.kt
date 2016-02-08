@@ -20,9 +20,15 @@ class Settings {
     lateinit var zoneId: String
 
     companion object {
+        fun alreadyInitialized(database: OrmaDatabase): Boolean {
+            return database.selectFromSettings().count() > 0
+        }
 
         fun getRecord(database: OrmaDatabase): Settings? {
-            return database.selectFromSettings().firstOrNull()
+            if (!alreadyInitialized(database)) {
+                return null
+            }
+            return database.selectFromSettings().first()
         }
 
         fun getRecordAndAction(database: OrmaDatabase): Pair<Settings, (Settings) -> Settings> {

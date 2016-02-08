@@ -42,10 +42,12 @@ class AccountSetupFragment : RxFragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Settings.getRecord(LongestStreakApplication.database)?.let {
-            binding.editName.setText(it.name)
-            binding.editEmail.setText(it.email)
-            binding.editZoneId.setText(it.zoneId)
+        if (Settings.alreadyInitialized(LongestStreakApplication.database)) {
+            Settings.getRecord(LongestStreakApplication.database)?.let {
+                binding.editName.setText(it.name)
+                binding.editEmail.setText(it.email)
+                binding.editZoneId.setText(it.zoneId)
+            }
         }
 
         binding.registerButton.setOnClickListener {

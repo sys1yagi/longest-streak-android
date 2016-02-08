@@ -46,12 +46,12 @@ class PollingAlarmProcessor : AlarmProcessor {
 
     override fun process(context: Context, intent: Intent) {
         Log.d(TAG, "PollingAlarmProcessor.process")
-        val settings = Settings.getRecord(LongestStreakApplication.database)
-        if (settings == null) {
+        if (!Settings.alreadyInitialized(LongestStreakApplication.database)) {
             Log.d(TAG, "Account not initialized yet")
             nextAlarmAfterAnHour(context)
             return
         }
+        val settings = Settings.getRecord(LongestStreakApplication.database)!!
         GithubService.client.userEvents(settings.name)
                 .subscribe(
                         { events ->
