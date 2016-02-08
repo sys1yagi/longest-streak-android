@@ -51,7 +51,7 @@ class PollingAlarmProcessor : AlarmProcessor {
             nextAlarmAfterAnHour(context)
             return
         }
-        val settings = Settings.getRecord(LongestStreakApplication.database)!!
+        val settings = Settings.getRecord(LongestStreakApplication.database)
         GithubService.client.userEvents(settings.name)
                 .subscribe(
                         { events ->

@@ -17,7 +17,7 @@ import rx.schedulers.Schedulers
 
 @FragmentCreator
 class MainFragment : RxFragment() {
-    
+
     lateinit var settings: Settings
 
     lateinit var binding: FragmentMainBinding
@@ -35,7 +35,7 @@ class MainFragment : RxFragment() {
 
     override fun onResume() {
         super.onResume()
-        settings = Settings.getRecord(LongestStreakApplication.database)?.let { it } ?: Settings()
+        settings = Settings.getRecord(LongestStreakApplication.database)
         checkContributionOfTheToday(settings)
     }
 

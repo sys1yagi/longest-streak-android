@@ -24,23 +24,24 @@ class Settings {
             return database.selectFromSettings().count() > 0
         }
 
-        fun getRecord(database: OrmaDatabase): Settings? {
+        fun getRecord(database: OrmaDatabase): Settings {
             if (!alreadyInitialized(database)) {
-                return null
+                throw IllegalStateException("record not found")
             }
             return database.selectFromSettings().first()
         }
 
         fun getRecordAndAction(database: OrmaDatabase): Pair<Settings, (Settings) -> Settings> {
-            var settings = getRecord(database)
+            var settings: Settings?
             var saveAction: (Settings) -> Settings
-            if (settings == null) {
+            if (!alreadyInitialized(database)) {
                 settings = Settings()
                 saveAction = {
                     database.insertIntoSettings(it)
                     it
                 }
             } else {
+                settings = getRecord(database)
                 saveAction = {
                     database.updateSettings()
                             .idEq(it.id)
