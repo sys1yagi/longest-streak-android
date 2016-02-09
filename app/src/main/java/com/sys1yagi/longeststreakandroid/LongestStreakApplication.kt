@@ -19,12 +19,5 @@ class LongestStreakApplication : Application() {
         database = OrmaDatabase.builder(this)
                 .name("github_longest_streaks.db")
                 .build()
-        //        if (!Settings.alreadyInitialized(database)) {
-        //            val settings = Settings()
-        //            settings.name = "sys1yagi"
-        //            settings.email = "sylc.yagi@gmai.com"
-        //            settings.zoneId = "Asia/Tokyo"
-        //            database.insertIntoSettings(settings)
-        //        }
     }
 }
