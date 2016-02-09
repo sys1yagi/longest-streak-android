@@ -13,6 +13,7 @@ import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.model.Event
 import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
 import com.trello.rxlifecycle.components.support.RxFragment
+import retrofit2.Response
 import rx.schedulers.Schedulers
 
 @FragmentCreator
@@ -64,9 +65,11 @@ class MainFragment : RxFragment() {
         GithubService.client.userEvents(settings.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .compose(bindToLifecycle<List<Event>>())
+                .compose(bindToLifecycle<Response<List<Event>>>())
                 .subscribe(
-                        { events -> setupStatus(settings, events) },
+                        { response ->
+                            setupStatus(settings, response.body())
+                        },
                         { error -> showError(error) }
                 )
     }

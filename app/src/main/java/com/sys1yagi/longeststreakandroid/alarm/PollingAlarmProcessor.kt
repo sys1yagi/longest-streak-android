@@ -54,12 +54,12 @@ class PollingAlarmProcessor : AlarmProcessor {
         val settings = Settings.getRecord(LongestStreakApplication.database)
         GithubService.client.userEvents(settings.name)
                 .subscribe(
-                        { events ->
+                        { response ->
                             val now = System.currentTimeMillis()
                             val count = JUDGEMENT.todayContributionCount(settings.name,
                                     settings.zoneId,
                                     now,
-                                    events)
+                                    response.body())
                             if ( count == 0) {
                                 Log.d(TAG, "Not yet! The next alarm is an hour later.")
                                 notifyNotYetContribution(context)

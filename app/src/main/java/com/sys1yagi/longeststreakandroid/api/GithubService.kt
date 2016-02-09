@@ -13,6 +13,6 @@ class GithubService {
                 .addConverterFactory(GsonConverterFactory.create(GsonProvider.instance))
                 .build()
 
-        public val client = retrofit.create(Github::class.java)
+        val client = retrofit.create(Github::class.java)
     }
 }
