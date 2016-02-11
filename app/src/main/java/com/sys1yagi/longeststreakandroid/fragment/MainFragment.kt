@@ -2,6 +2,7 @@ package com.sys1yagi.longeststreakandroid.fragment
 
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.text.TextUtils
 import android.view.*
 import com.cookpad.android.rxt4a.schedulers.AndroidSchedulers
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
@@ -40,10 +41,15 @@ class MainFragment : RxFragment() {
         checkContributionOfTheToday(settings)
     }
 
-    fun showProgress() {
-        binding.statusBoard.visibility = View.GONE
-        binding.progress.visibility = View.VISIBLE
-        binding.error.visibility = View.GONE
+    fun showProgress(message: String = "") {
+        activity.runOnUiThread {
+            binding.statusBoard.visibility = View.GONE
+            binding.progress.visibility = View.VISIBLE
+            binding.error.visibility = View.GONE
+            if (!TextUtils.isEmpty(message)) {
+                binding.loadingText.text = message
+            }
+        }
     }
 
     fun showStatus() {
