@@ -1,11 +1,14 @@
 package com.sys1yagi.longeststreakandroid.alarm
 
+import android.app.Notification
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.sys1yagi.android.alarmmanagersimplify.AlarmProcessor
 import com.sys1yagi.android.alarmmanagersimplify.annotation.Simplify
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
+import com.sys1yagi.longeststreakandroid.activity.MainActivity
 import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.notification.LocalNotificationHelper
@@ -78,17 +81,20 @@ class PollingAlarmProcessor : AlarmProcessor {
                 )
     }
 
-    fun notifyAlreadyContributedToday(context: Context) {
+    fun notifyTodayStatus(context: Context, title:String){
         val helper = LocalNotificationHelper(context)
-        val title = "Yes! Already Contributed Today...!"
+        val builder = helper.createNotification(title, title, "Github longest streak");
+        val intent = Intent(context, MainActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+        builder.setContentIntent(pendingIntent)
+        helper.notify(10, builder)
+    }
 
-        helper.notify(10, helper.createNotification(title, title, "Github longest streak"))
+    fun notifyAlreadyContributedToday(context: Context) {
+        notifyTodayStatus(context, "Yes! Already Contributed Today...!")
     }
 
     fun notifyNotYetContribution(context: Context) {
-        val helper = LocalNotificationHelper(context)
-        val title = "Not Yet Contribution Today...!"
-
-        helper.notify(10, helper.createNotification(title, title, "Github longest streak"))
+        notifyTodayStatus(context, "Not Yet Contribution Today...!")
     }
 }
