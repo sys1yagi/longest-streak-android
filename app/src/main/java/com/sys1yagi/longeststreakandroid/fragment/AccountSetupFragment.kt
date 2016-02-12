@@ -9,15 +9,20 @@ import com.sys1yagi.fragmentcreator.annotation.Args
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
+import com.sys1yagi.longeststreakandroid.api.Github
 import com.sys1yagi.longeststreakandroid.databinding.FragmentAccountSetupBinding
 import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.tool.KeyboardManager
 import com.trello.rxlifecycle.components.support.RxFragment
 import org.threeten.bp.DateTimeException
 import org.threeten.bp.ZoneId
+import javax.inject.Inject
 
 @FragmentCreator
 class AccountSetupFragment : RxFragment() {
+
+    @Inject
+    lateinit var github : Github
 
     @Args(require = false)
     var isEditMode: Boolean = false
@@ -32,6 +37,7 @@ class AccountSetupFragment : RxFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AccountSetupFragmentCreator.read(this)
+        (context.applicationContext as LongestStreakApplication).component.inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,

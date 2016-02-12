@@ -1,6 +1,5 @@
 package com.sys1yagi.longeststreakandroid.alarm
 
-import android.app.Notification
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -9,7 +8,6 @@ import com.sys1yagi.android.alarmmanagersimplify.AlarmProcessor
 import com.sys1yagi.android.alarmmanagersimplify.annotation.Simplify
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.activity.MainActivity
-import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.notification.LocalNotificationHelper
 import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
@@ -48,6 +46,7 @@ class PollingAlarmProcessor : AlarmProcessor {
     }
 
     override fun process(context: Context, intent: Intent) {
+        val github = (context.applicationContext as LongestStreakApplication).component.provideGithub()
         Log.d(TAG, "PollingAlarmProcessor.process")
         if (!Settings.alreadyInitialized(LongestStreakApplication.database)) {
             Log.d(TAG, "Account not initialized yet")
@@ -55,7 +54,7 @@ class PollingAlarmProcessor : AlarmProcessor {
             return
         }
         val settings = Settings.getRecord(LongestStreakApplication.database)
-        GithubService.client.userEvents(settings.name)
+        github.userEvents(settings.name)
                 .subscribe(
                         { response ->
                             val now = System.currentTimeMillis()
@@ -81,7 +80,7 @@ class PollingAlarmProcessor : AlarmProcessor {
                 )
     }
 
-    fun notifyTodayStatus(context: Context, title:String){
+    fun notifyTodayStatus(context: Context, title: String) {
         val helper = LocalNotificationHelper(context)
         val builder = helper.createNotification(title, title, "Github longest streak");
         val intent = Intent(context, MainActivity::class.java)

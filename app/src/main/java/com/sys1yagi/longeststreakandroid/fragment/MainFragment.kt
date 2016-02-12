@@ -8,7 +8,7 @@ import com.cookpad.android.rxt4a.schedulers.AndroidSchedulers
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
-import com.sys1yagi.longeststreakandroid.api.GithubService
+import com.sys1yagi.longeststreakandroid.api.Github
 import com.sys1yagi.longeststreakandroid.databinding.FragmentMainBinding
 import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.model.Event
@@ -16,9 +16,13 @@ import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
 import com.trello.rxlifecycle.components.support.RxFragment
 import retrofit2.Response
 import rx.schedulers.Schedulers
+import javax.inject.Inject
 
 @FragmentCreator
 class MainFragment : RxFragment() {
+
+    @Inject
+    lateinit var github : Github
 
     lateinit var settings: Settings
 
@@ -28,6 +32,7 @@ class MainFragment : RxFragment() {
         super.onCreate(savedInstanceState)
         MainFragmentCreator.read(this)
         setHasOptionsMenu(true)
+        (context.applicationContext as LongestStreakApplication).component.inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -68,7 +73,7 @@ class MainFragment : RxFragment() {
     fun checkContributionOfTheToday(settings: Settings) {
         showProgress()
 
-        GithubService.client.userEvents(settings.name)
+        github.userEvents(settings.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(bindToLifecycle<Response<List<Event>>>())
