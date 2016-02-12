@@ -58,10 +58,19 @@ class AccountSetupFragment : RxFragment() {
                         binding.editEmail.text.toString(),
                         binding.editZoneId.text.toString()
                 )
-                openMainFragment(settings)
+                syncEvents(settings, {
+                    openMainFragment(it)
+                })
             }
         }
         KeyboardManager.show(context)
+    }
+
+    fun syncEvents(settings: Settings, callback: (Settings) -> Unit): Unit {
+        //TODO 既存のeventsを消す
+        //リクエストをして全eventを保存する
+
+        callback.invoke(settings)
     }
 
     fun openMainFragment(settings: Settings) {
