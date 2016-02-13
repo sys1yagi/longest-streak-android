@@ -10,4 +10,7 @@
     <color name="white">#ffffff</color>
     <color name="red">#ff0000</color>
     <color name="green">#009900</color>
+    <color name="book_loading_background">#303F9F</color>
+    <color name="book_loading_book">#ffffff</color>
+    <color name="book_loading_page">#303F9F </color>
 </resources>

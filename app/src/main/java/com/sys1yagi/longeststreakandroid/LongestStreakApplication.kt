@@ -5,13 +5,12 @@ import com.facebook.stetho.Stetho
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.sys1yagi.longeststreakandroid.dagger.component.AppComponent
 import com.sys1yagi.longeststreakandroid.dagger.component.DaggerAppComponent
+import com.sys1yagi.longeststreakandroid.dagger.module.IoModule
 import com.sys1yagi.longeststreakandroid.db.OrmaDatabase
 
 class LongestStreakApplication : Application() {
 
-    companion object {
-        lateinit var database: OrmaDatabase
-    }
+    lateinit var database: OrmaDatabase
 
     lateinit var component: AppComponent
 
@@ -20,7 +19,9 @@ class LongestStreakApplication : Application() {
         Stetho.initializeWithDefaults(this)
         AndroidThreeTen.init(this);
 
-        component = DaggerAppComponent.builder().build()
+        component = DaggerAppComponent.builder()
+                .ioModule(IoModule(this))
+                .build()
         database = OrmaDatabase.builder(this)
                 .name("github_longest_streaks.db")
                 .build()

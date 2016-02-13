@@ -5,24 +5,31 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.cookpad.android.rxt4a.schedulers.AndroidSchedulers
 import com.sys1yagi.fragmentcreator.annotation.Args
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
-import com.sys1yagi.longeststreakandroid.api.Github
+import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.databinding.FragmentAccountSetupBinding
+import com.sys1yagi.longeststreakandroid.db.EventLog
+import com.sys1yagi.longeststreakandroid.db.OrmaDatabase
 import com.sys1yagi.longeststreakandroid.db.Settings
+import com.sys1yagi.longeststreakandroid.model.Event
 import com.sys1yagi.longeststreakandroid.tool.KeyboardManager
 import com.trello.rxlifecycle.components.support.RxFragment
 import org.threeten.bp.DateTimeException
 import org.threeten.bp.ZoneId
+import retrofit2.Response
+import rx.schedulers.Schedulers
 import javax.inject.Inject
 
 @FragmentCreator
 class AccountSetupFragment : RxFragment() {
-
     @Inject
-    lateinit var github : Github
+    lateinit var githubService: GithubService
+
+    lateinit var database: OrmaDatabase
 
     @Args(require = false)
     var isEditMode: Boolean = false
@@ -38,6 +45,7 @@ class AccountSetupFragment : RxFragment() {
         super.onCreate(savedInstanceState)
         AccountSetupFragmentCreator.read(this)
         (context.applicationContext as LongestStreakApplication).component.inject(this)
+        database = (context.applicationContext as LongestStreakApplication).database
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
@@ -48,8 +56,8 @@ class AccountSetupFragment : RxFragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (Settings.alreadyInitialized(LongestStreakApplication.database)) {
-            Settings.getRecord(LongestStreakApplication.database)?.let {
+        if (Settings.alreadyInitialized(database)) {
+            Settings.getRecord(database)?.let {
                 binding.editName.setText(it.name)
                 binding.editEmail.setText(it.email)
                 binding.editZoneId.setText(it.zoneId)
@@ -64,19 +72,55 @@ class AccountSetupFragment : RxFragment() {
                         binding.editEmail.text.toString(),
                         binding.editZoneId.text.toString()
                 )
-                syncEvents(settings, {
-                    openMainFragment(it)
-                })
+                syncEvents(settings,
+                        {
+                            openMainFragment(it)
+                        },
+                        {
+                            it.printStackTrace()
+                            showForm()
+                        })
             }
         }
         KeyboardManager.show(context)
     }
 
-    fun syncEvents(settings: Settings, callback: (Settings) -> Unit): Unit {
-        //TODO 既存のeventsを消す
-        //リクエストをして全eventを保存する
+    fun showLoading(){
+        binding.settingsForm.visibility = View.GONE
+        binding.loadingContainer.visibility = View.VISIBLE
+        binding.loading.start()
+    }
+    fun showForm(){
+        binding.settingsForm.visibility = View.VISIBLE
+        binding.loadingContainer.visibility = View.GONE
+        binding.loading.stop()
+    }
 
-        callback.invoke(settings)
+    fun syncEvents(settings: Settings, callback: (Settings) -> Unit, error: (Throwable) -> Unit): Unit {
+        showLoading()
+        database.deleteFromEventLog().execute()
+        githubService.userAllEvents(settings.name)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle<List<Event>>())
+                .subscribe(
+                        { events ->
+                            events.forEach {
+                                val eventLog = EventLog()
+                                eventLog.id = it.id
+                                eventLog.name = settings.name
+                                eventLog.createdAt = it.createdAt
+                                eventLog.type = it.type
+                                database.insertIntoEventLog(eventLog)
+                            }
+                        },
+                        {
+                            error.invoke(it)
+                        },
+                        {
+                            callback.invoke(settings)
+                        }
+                )
     }
 
     fun openMainFragment(settings: Settings) {
@@ -90,7 +134,7 @@ class AccountSetupFragment : RxFragment() {
     }
 
     fun saveAccount(name: String, email: String, zoneId: String): Settings {
-        val (settings, saveAction) = Settings.getRecordAndAction(LongestStreakApplication.database)
+        val (settings, saveAction) = Settings.getRecordAndAction(database)
         settings.name = name
         settings.email = email
         settings.zoneId = zoneId

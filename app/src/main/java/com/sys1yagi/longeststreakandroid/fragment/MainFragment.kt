@@ -8,9 +8,9 @@ import com.cookpad.android.rxt4a.schedulers.AndroidSchedulers
 import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
-import com.sys1yagi.longeststreakandroid.api.Github
 import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.databinding.FragmentMainBinding
+import com.sys1yagi.longeststreakandroid.db.OrmaDatabase
 import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.model.Event
 import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
@@ -25,6 +25,8 @@ class MainFragment : RxFragment() {
     @Inject
     lateinit var githubService: GithubService
 
+    lateinit var database: OrmaDatabase
+
     lateinit var settings: Settings
 
     lateinit var binding: FragmentMainBinding
@@ -34,6 +36,7 @@ class MainFragment : RxFragment() {
         MainFragmentCreator.read(this)
         setHasOptionsMenu(true)
         (context.applicationContext as LongestStreakApplication).component.inject(this)
+        database = (context.applicationContext as LongestStreakApplication).database
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -43,7 +46,7 @@ class MainFragment : RxFragment() {
 
     override fun onResume() {
         super.onResume()
-        settings = Settings.getRecord(LongestStreakApplication.database)
+        settings = Settings.getRecord(database)
         checkContributionOfTheToday(settings)
     }
 

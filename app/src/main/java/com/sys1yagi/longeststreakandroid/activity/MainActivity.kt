@@ -19,7 +19,8 @@ class MainActivity : RxAppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         if (savedInstanceState == null) {
-            if (!Settings.alreadyInitialized(LongestStreakApplication.database)) {
+            val database = (applicationContext as LongestStreakApplication).database
+            if (!Settings.alreadyInitialized(database)) {
                 supportFragmentManager.beginTransaction()
                         .add(R.id.content_frame, AccountSetupFragmentCreator.newBuilder().build())
                         .commit()
