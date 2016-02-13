@@ -33,3 +33,5 @@ captures/
 
 .idea
 *.iml
+
+build-time-report.csv
