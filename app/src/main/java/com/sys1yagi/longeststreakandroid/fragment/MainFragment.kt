@@ -9,6 +9,7 @@ import com.sys1yagi.fragmentcreator.annotation.FragmentCreator
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
 import com.sys1yagi.longeststreakandroid.api.Github
+import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.databinding.FragmentMainBinding
 import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.model.Event
@@ -22,7 +23,7 @@ import javax.inject.Inject
 class MainFragment : RxFragment() {
 
     @Inject
-    lateinit var github : Github
+    lateinit var githubService: GithubService
 
     lateinit var settings: Settings
 
@@ -73,7 +74,7 @@ class MainFragment : RxFragment() {
     fun checkContributionOfTheToday(settings: Settings) {
         showProgress()
 
-        github.userEvents(settings.name)
+        githubService.userEvents(settings.name, 9)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(bindToLifecycle<Response<List<Event>>>())
