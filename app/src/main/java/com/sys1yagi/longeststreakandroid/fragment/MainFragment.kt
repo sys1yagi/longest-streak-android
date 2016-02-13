@@ -74,7 +74,7 @@ class MainFragment : RxFragment() {
     fun checkContributionOfTheToday(settings: Settings) {
         showProgress()
 
-        githubService.userEvents(settings.name, 9)
+        githubService.userEvents(settings.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(bindToLifecycle<Response<List<Event>>>())
