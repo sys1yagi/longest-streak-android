@@ -57,7 +57,7 @@ class AccountSetupFragment : RxFragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (Settings.alreadyInitialized(database)) {
-            Settings.getRecord(database)?.let {
+            Settings.getRecord(database).let {
                 binding.editName.setText(it.name)
                 binding.editEmail.setText(it.email)
                 binding.editZoneId.setText(it.zoneId)
@@ -106,12 +106,7 @@ class AccountSetupFragment : RxFragment() {
                 .subscribe(
                         { events ->
                             events.forEach {
-                                val eventLog = EventLog()
-                                eventLog.id = it.id
-                                eventLog.name = settings.name
-                                eventLog.createdAt = it.createdAt
-                                eventLog.type = it.type
-                                database.insertIntoEventLog(eventLog)
+                                database.insertIntoEventLog(EventLog.toEventLog(settings.name, it))
                             }
                         },
                         {

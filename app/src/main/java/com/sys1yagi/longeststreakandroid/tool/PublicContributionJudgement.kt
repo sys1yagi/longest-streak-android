@@ -26,7 +26,7 @@ class PublicContributionJudgement {
             }
 
             // check date
-            if (!isMatchDate(zoneId, now, event)) {
+            if (!TimeKeeper.isMatchDate(zoneId, now, event)) {
                 return 0
             }
 
@@ -42,7 +42,7 @@ class PublicContributionJudgement {
                 return 0
             }
             // check date
-            if (!isMatchDate(zoneId, now, event)) {
+            if (!TimeKeeper.isMatchDate(zoneId, now, event)) {
                 return 0
             }
 
@@ -57,7 +57,7 @@ class PublicContributionJudgement {
                 return 0
             }
             // check date
-            if (!isMatchDate(zoneId, now, event)) {
+            if (!TimeKeeper.isMatchDate(zoneId, now, event)) {
                 return 0
             }
             return if (name.equals(event.payload.pullRequest.user.login)) 1 else 0
@@ -65,15 +65,6 @@ class PublicContributionJudgement {
     }
 
     companion object {
-        fun isMatchDate(zoneId: String, now: Long, event: Event): Boolean {
-            return day(now, zoneId) == day(event.createdAt.time, zoneId)
-        }
-
-        fun day(time: Long, zoneId: String): Long {
-            val dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.of(zoneId))
-            return dateTime.year * 10000L + dateTime.monthValue * 100L + dateTime.dayOfMonth
-        }
-
         val judgements = arrayOf(
                 PushEvent(),
                 IssuesEvent(),

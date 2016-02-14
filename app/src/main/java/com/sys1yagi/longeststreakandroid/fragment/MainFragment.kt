@@ -10,12 +10,16 @@ import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.R
 import com.sys1yagi.longeststreakandroid.api.GithubService
 import com.sys1yagi.longeststreakandroid.databinding.FragmentMainBinding
+import com.sys1yagi.longeststreakandroid.db.EventLog
 import com.sys1yagi.longeststreakandroid.db.OrmaDatabase
 import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.model.Event
+import com.sys1yagi.longeststreakandroid.tool.LongestStreakCounter
 import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
 import com.trello.rxlifecycle.components.support.RxFragment
+import org.antlr.v4.runtime.misc.Tuple2
 import retrofit2.Response
+import rx.Observable
 import rx.schedulers.Schedulers
 import javax.inject.Inject
 
@@ -24,6 +28,9 @@ class MainFragment : RxFragment() {
 
     @Inject
     lateinit var githubService: GithubService
+
+    @Inject
+    lateinit var longestStreakCounter: LongestStreakCounter
 
     lateinit var database: OrmaDatabase
 
@@ -37,6 +44,7 @@ class MainFragment : RxFragment() {
         setHasOptionsMenu(true)
         (context.applicationContext as LongestStreakApplication).component.inject(this)
         database = (context.applicationContext as LongestStreakApplication).database
+        settings = Settings.getRecord(database)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -46,7 +54,6 @@ class MainFragment : RxFragment() {
 
     override fun onResume() {
         super.onResume()
-        settings = Settings.getRecord(database)
         checkContributionOfTheToday(settings)
     }
 
@@ -89,6 +96,10 @@ class MainFragment : RxFragment() {
                 )
     }
 
+    fun setupLongestStreak(count: Int) {
+        binding.longestStreak.text = getString(R.string.longest_streak, count)
+    }
+
     fun setupStatus(settings: Settings, events: List<Event>) {
         showStatus()
 
@@ -103,6 +114,21 @@ class MainFragment : RxFragment() {
         } else {
             notYetContributed()
         }
+
+        Observable.create<Int> {
+            events.forEach {
+                database.insertIntoEventLog(EventLog.toEventLog(settings.name, it))
+            }
+            val longestStreak = longestStreakCounter.count(database, System.currentTimeMillis(), settings.zoneId)
+            it.onNext(longestStreak)
+            it.onCompleted()
+        }
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle<Int>())
+                .subscribe({
+                    setupLongestStreak(it)
+                })
     }
 
     fun alreadyContributed(count: Int) {

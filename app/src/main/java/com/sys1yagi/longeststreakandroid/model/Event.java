@@ -91,7 +91,7 @@ public class Event {
         TEAM_ADD("TeamAddEvent"),
         WATCH("WatchEvent");
 
-        private String src;
+        public String src;
 
         Type(String src) {
             this.src = src;

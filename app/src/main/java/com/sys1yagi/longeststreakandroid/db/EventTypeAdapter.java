@@ -8,7 +8,7 @@ import com.sys1yagi.longeststreakandroid.model.Event;
 public class EventTypeAdapter {
 
     public static String serialize(Event.Type source) {
-        return source.name();
+        return source.src;
     }
 
     public static Event.Type deserialize(String serialized) {
