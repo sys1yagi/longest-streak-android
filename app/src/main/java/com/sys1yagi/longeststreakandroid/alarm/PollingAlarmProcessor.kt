@@ -8,6 +8,7 @@ import com.sys1yagi.android.alarmmanagersimplify.AlarmProcessor
 import com.sys1yagi.android.alarmmanagersimplify.annotation.Simplify
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.activity.MainActivity
+import com.sys1yagi.longeststreakandroid.db.EventLog
 import com.sys1yagi.longeststreakandroid.db.Settings
 import com.sys1yagi.longeststreakandroid.notification.LocalNotificationHelper
 import com.sys1yagi.longeststreakandroid.tool.PublicContributionJudgement
@@ -60,10 +61,11 @@ class PollingAlarmProcessor : AlarmProcessor {
                 .subscribe(
                         { response ->
                             val now = System.currentTimeMillis()
+                            val events = response.body()
                             val count = JUDGEMENT.todayContributionCount(settings.name,
                                     settings.zoneId,
                                     now,
-                                    response.body())
+                                    events)
                             if ( count == 0) {
                                 Log.d(TAG, "Not yet! The next alarm is an hour later.")
                                 notifyNotYetContribution(context)
@@ -72,6 +74,9 @@ class PollingAlarmProcessor : AlarmProcessor {
                                 Log.d(TAG, "Already you contributed today! Next alarm is tomorrow.")
                                 notifyAlreadyContributedToday(context)
                                 nextAlarmTomorrow(context, now, settings.zoneId)
+                            }
+                            events.forEach {
+                                database.insertIntoEventLog(EventLog.toEventLog(settings.name, it))
                             }
                         },
                         { error ->
