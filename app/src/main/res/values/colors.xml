@@ -13,4 +13,9 @@
     <color name="book_loading_background">#303F9F</color>
     <color name="book_loading_book">#ffffff</color>
     <color name="book_loading_page">#303F9F </color>
+    <color name="grass_0">#eaeaea</color>
+    <color name="grass_1">#cde56c</color>
+    <color name="grass_2">#71bf4d</color>
+    <color name="grass_3">#35972c</color>
+    <color name="grass_4">#175817</color>
 </resources>
