@@ -45,13 +45,13 @@
                 android:layout_gravity="center"
                 android:orientation="vertical">
             <android.support.v7.widget.CardView
-                    android:id="@+id/settings_form"
+                    android:id="@+id/status_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="12dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="7dp">
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="4dp">
                 <LinearLayout
                         android:id="@+id/status_board"
                         android:layout_width="match_parent"
@@ -59,40 +59,40 @@
                         android:paddingBottom="16dp"
                         android:paddingTop="16dp"
                         android:orientation="vertical">
-                <TextView
-                        android:id="@+id/user_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textSize="@dimen/text_size_today"
-                        android:textColor="@color/text"
-                        tools:text="Hi! sys1yagi"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textSize="@dimen/text_size_today"
-                        android:textColor="@color/text"
-                        android:textStyle="bold"
-                        android:text="@string/today"/>
-                <TextView
-                        android:id="@+id/today_status"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textSize="@dimen/text_size_status"
-                        android:textStyle="bold"
-                        android:textColor="@color/red"
-                        tools:text="Not Yet"/>
-                <TextView
-                        android:id="@+id/contribution_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textSize="@dimen/text_size_today"
-                        android:textColor="@color/text"
-                        tools:text="2 contribution!"
-                />
+                    <TextView
+                            android:id="@+id/user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/text_size_today"
+                            android:textColor="@color/text"
+                            tools:text="Hi! sys1yagi"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/text_size_today"
+                            android:textColor="@color/text"
+                            android:textStyle="bold"
+                            android:text="@string/today"/>
+                    <TextView
+                            android:id="@+id/today_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_size_status"
+                            android:textStyle="bold"
+                            android:textColor="@color/red"
+                            tools:text="Not Yet"/>
+                    <TextView
+                            android:id="@+id/contribution_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/text_size_today"
+                            android:textColor="@color/text"
+                            tools:text="2 contribution!"
+                    />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <TextView
