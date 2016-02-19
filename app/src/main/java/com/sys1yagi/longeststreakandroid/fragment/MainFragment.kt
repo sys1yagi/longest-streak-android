@@ -1,5 +1,7 @@
 package com.sys1yagi.longeststreakandroid.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.text.TextUtils
@@ -108,6 +110,10 @@ class MainFragment : RxFragment() {
                 settings.name, settings.zoneId,
                 System.currentTimeMillis(),
                 events);
+        binding.statusCard.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/${settings.name}/"))
+            startActivity(intent)
+        }
         binding.userName.text = getString(R.string.hi_today, settings.name)
         if (count > 0) {
             alreadyContributed(count)
