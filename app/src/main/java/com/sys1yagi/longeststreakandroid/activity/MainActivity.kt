@@ -32,6 +32,5 @@ class MainActivity : RxAppCompatActivity() {
         }
 
         PollingAlarmProcessor.nextAlarmAfterAnHour(this)
-
     }
 }

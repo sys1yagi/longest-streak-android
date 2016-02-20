@@ -51,14 +51,15 @@
                     android:layout_gravity="center"
                     android:layout_margin="12dp"
                     app:cardElevation="4dp"
-                    app:cardCornerRadius="4dp">
+                    app:cardCornerRadius="2dp">
                 <LinearLayout
                         android:id="@+id/status_board"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="16dp"
                         android:paddingTop="16dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@drawable/clickable_corner_layout">
                     <TextView
                             android:id="@+id/user_name"
                             android:layout_width="wrap_content"
@@ -104,6 +105,7 @@
                     android:textColor="@color/text"
                     tools:text="Longest streak 10 days"
             />
+
         </LinearLayout>
     </FrameLayout>
 </layout>
