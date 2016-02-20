@@ -10,7 +10,7 @@ class LocalNotificationHelper(val context: Context) {
 
     fun createNotification(title: String, ticker: String, message: String): NotificationCompat.Builder {
         val notificationBuilder = NotificationCompat.Builder(context)
-        notificationBuilder.setSmallIcon(R.mipmap.ic_launcher)
+        notificationBuilder.setSmallIcon(R.drawable.ic_launcher)
         notificationBuilder.setContentTitle(title)
         notificationBuilder.setAutoCancel(true)
         notificationBuilder.setTicker(ticker)
