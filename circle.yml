@@ -22,7 +22,7 @@ test:
     # run test
     - ./gradlew test
     # run lint
-    - ./gradlew clean lint
+    - ./gradlew lint
     # run robolectric tests - disabled for now
     #- ./gradlew testStagingDebugUnitTest -PdisablePreDex
   post:
