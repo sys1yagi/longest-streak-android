@@ -1,29 +1,27 @@
 package com.sys1yagi.longeststreakandroid.api
 
 import com.google.gson.Gson
+import com.sys1yagi.kmockito.invoked
+import com.sys1yagi.kmockito.mock
 import com.sys1yagi.longeststreakandroid.BuildConfig
 import com.sys1yagi.longeststreakandroid.LongestStreakApplication
 import com.sys1yagi.longeststreakandroid.model.Event
 import okhttp3.Headers
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mockito.mock
-import org.robolectric.RobolectricGradleTestRunner
-import org.robolectric.annotation.Config
-import rx.observers.TestSubscriber
-import org.assertj.core.api.Assertions.assertThat
-
-import org.mockito.Mockito.*;
-import org.junit.Assert.*;
-import org.hamcrest.CoreMatchers.*;
-import org.junit.Rule
+import org.mockito.Mockito.anyString
+import org.mockito.Mockito.eq
 import org.powermock.api.mockito.PowerMockito
 import org.powermock.core.classloader.annotations.PowerMockIgnore
 import org.powermock.core.classloader.annotations.PrepareForTest
 import org.powermock.modules.junit4.rule.PowerMockRule
+import org.robolectric.RobolectricGradleTestRunner
+import org.robolectric.annotation.Config
 import retrofit2.Response
 import rx.Observable
-import java.util.*
+import rx.observers.TestSubscriber
 
 @RunWith(RobolectricGradleTestRunner::class)
 @Config(application = LongestStreakApplication::class, constants = BuildConfig::class, sdk = intArrayOf(21))
@@ -44,24 +42,24 @@ class GithubServiceTest {
     @Test
     fun userAllEvents() {
         val github = PowerMockito.mock(Github::class.java)
-        `when`(github.userEvents(anyString(), eq(1))).thenReturn(Observable.create {
-            val response = mock(Response::class.java) as Response<List<Event>>
-            `when`(response.headers()).thenReturn(Headers.of(
+        github.userEvents(anyString(), eq(1)).invoked.thenReturn(Observable.create {
+            val response = Response::class.java.mock()
+            response.headers().invoked.thenReturn(Headers.of(
                     "Link",
                     "<https://api.github.com/user/749051/events/public?page=2>; rel=\"next\", <https://api.github.com/user/749051/events/public?page=2>; rel=\"last\""
             ))
-            `when`(response.body()).thenReturn((1L..3L).map { createEvent(it) })
-            it.onNext(response)
+            response.body().invoked.thenReturn((1L..3L).map { createEvent(it) })
+            it.onNext(response as Response<List<Event>>)
             it.onCompleted()
         })
-        `when`(github.userEvents(anyString(), eq(2))).thenReturn(Observable.create {
-            val response = mock(Response::class.java) as Response<List<Event>>
-            `when`(response.headers()).thenReturn(Headers.of(
+        github.userEvents(anyString(), eq(2)).invoked.thenReturn(Observable.create {
+            val response = Response::class.java.mock()
+            response.headers().invoked.thenReturn(Headers.of(
                     "Link",
                     "<https://api.github.com/user/749051/events/public?page=1>; rel=\"first\", <https://api.github.com/user/749051/events/public?page=1>; rel=\"prev\""
             ))
-            `when`(response.body()).thenReturn((4L..6L).map { createEvent(it) })
-            it.onNext(response)
+            response.body().invoked.thenReturn((4L..6L).map { createEvent(it) })
+            it.onNext(response as Response<List<Event>>)
             it.onCompleted()
         })
 
