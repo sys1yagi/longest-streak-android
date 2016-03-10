@@ -2,9 +2,6 @@ package com.sys1yagi.longeststreakandroid.tool
 
 import com.sys1yagi.longeststreakandroid.model.Commit
 import com.sys1yagi.longeststreakandroid.model.Event
-import org.threeten.bp.Instant
-import org.threeten.bp.LocalDateTime
-import org.threeten.bp.ZoneId
 
 class PublicContributionJudgement {
 
@@ -37,6 +34,11 @@ class PublicContributionJudgement {
 
     class IssuesEvent : Judgement {
         override fun isMyContribution(name: String, zoneId: String, now: Long, event: Event): Int {
+
+            if (!"opened".equals(event.payload.action)) {
+                return 0
+            }
+
             // check type
             if (!event.type.equals(Event.Type.ISSUES)) {
                 return 0
