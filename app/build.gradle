@@ -85,7 +85,7 @@ dependencies {
         exclude group: 'com.squareup.okio', 'module': 'okio'
         exclude group: 'com.squareup.okhttp', 'module': 'okhttp'
     }
-    testCompile 'com.github.sys1yagi:kmockito:-SNAPSHOT'
+    testCompile 'com.github.sys1yagi:kmockito:0.0.1'
 }
 
 kapt {
